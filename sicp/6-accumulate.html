@@ -313,7 +313,7 @@ seqs : 연산을 적용할 이차원 리스트</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">accumulate_n</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">seqs</span><span class="p">):</span>
@@ -328,9 +328,7 @@ seqs : 연산을 적용할 이차원 리스트</code></pre>
         <span class="p">]</span> <span class="o">+</span> <span class="n">accumulate_n</span><span class="p">(</span>
             <span class="n">op</span><span class="p">,</span>
             <span class="n">init</span><span class="p">,</span>
-            <span class="nb">list</span><span class="p">(</span>
-                <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sqs</span><span class="p">:</span> <span class="n">sqs</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">seqs</span><span class="p">)</span>
-            <span class="p">)</span>
+            <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sqs</span><span class="p">:</span> <span class="n">sqs</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">seqs</span><span class="p">))</span>
         <span class="p">)</span>
 </pre></div>
 
@@ -351,7 +349,7 @@ seqs : 연산을 적용할 이차원 리스트</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">sum_sequences</span><span class="p">(</span><span class="n">seqs</span><span class="p">):</span>
@@ -372,7 +370,7 @@ seqs : 연산을 적용할 이차원 리스트</code></pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
