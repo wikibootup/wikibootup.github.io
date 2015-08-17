@@ -188,6 +188,23 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># referenced by : http://www.juanklopper.com/</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">init_printing</span><span class="p">,</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">Eq</span>
+
+
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span> <span class="o">=</span> <span class="s">&#39;mathjax&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">modules.basic</span> <span class="k">import</span> <span class="n">accumulate</span><span class="p">,</span> <span class="n">accumulate_n</span>
 </pre></div>
 
@@ -230,7 +247,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">dot_product</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
@@ -268,7 +285,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -282,39 +299,10 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dot_product</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dot_product</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dot_product</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -329,7 +317,75 @@ $</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>70</pre>
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">dot_product</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$70$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>검산하면,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Matrix</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$70$$
 </div>
 
 </div>
@@ -362,7 +418,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">matrix_by_vector</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
@@ -383,30 +439,17 @@ $</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>'행렬-벡터 곱'의 결과는 행렬의 각 행과 벡터를 내적한 값들로 만든 행렬과 같으므로</p>
 <p>이것으로 아래의 경우를 검증하면,</p>
-<p>$
-    M =
-    \begin{pmatrix}
-    1\ 2\ 3\
-    4\ 5\ 6\
-    7\ 8\ 9\
-    \end{pmatrix},
-    \ V =
-    \begin{pmatrix}
-    5\ 6\ 7
-    \end{pmatrix}
-$</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">M</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)]</span>
 <span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-<span class="n">RESULT</span> <span class="o">=</span> <span class="n">matrix_by_vector</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -416,10 +459,10 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">RESULT</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">Matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -430,11 +473,11 @@ $</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>[38, 92, 146]</pre>
+<div class="output_latex output_subarea output_execute_result">
+$$\left[\begin{matrix}1 & 2 & 3\\4 & 5 & 6\\7 & 8 & 9\end{matrix}\right]$$
 </div>
 
 </div>
@@ -445,7 +488,104 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Matrix</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left[\begin{matrix}5\\6\\7\end{matrix}\right]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">matrix_by_vector</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left [ 38, \quad 92, \quad 146\right ]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>검산하면,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left[\begin{matrix}38\\92\\146\end{matrix}\right]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">test_matrix_by_vector_using_dot_product</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
@@ -463,10 +603,10 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">test_matrix_by_vector_using_dot_product</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">RESULT</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">test_matrix_by_vector_using_dot_product</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">matrix_by_vector</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -486,10 +626,10 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">test_matrix_by_vector_using_dot_product</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">RESULT</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">test_matrix_by_vector_using_dot_product</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">matrix_by_vector</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">V</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -500,7 +640,7 @@ $</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -536,7 +676,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
@@ -556,28 +696,14 @@ $</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>matrix_by_vector</code>을 검증할 때 사용한 M을 다시 이용하면,</p>
-<p>$
-    M =
-    \begin{pmatrix}
-    1\ 2\ 3\
-    4\ 5\ 6\
-    7\ 8\ 9\
-    \end{pmatrix},
-    \ M^T =
-    \begin{pmatrix}
-    1\ 4\ 7\
-    2\ 5\ 8\
-    3\ 6\ 9\
-    \end{pmatrix}
-$</p>
+<p><code>matrix_by_vector</code>을 검증할 때 사용한 M을 다시 이용하여 전치transpose시키면,</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">M</span>
@@ -591,11 +717,11 @@ $</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>[(1, 2, 3), (4, 5, 6), (7, 8, 9)]</pre>
+<div class="output_latex output_subarea output_execute_result">
+$$\left [ \left ( 1, \quad 2, \quad 3\right ), \quad \left ( 4, \quad 5, \quad 6\right ), \quad \left ( 7, \quad 8, \quad 9\right )\right ]$$
 </div>
 
 </div>
@@ -606,7 +732,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
@@ -620,11 +746,50 @@ $</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>[(1, 4, 7), (2, 5, 8), (3, 6, 9)]</pre>
+<div class="output_latex output_subarea output_execute_result">
+$$\left [ \left ( 1, \quad 4, \quad 7\right ), \quad \left ( 2, \quad 5, \quad 8\right ), \quad \left ( 3, \quad 6, \quad 9\right )\right ]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>검산하면,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left[\begin{matrix}1 & 4 & 7\\2 & 5 & 8\\3 & 6 & 9\end{matrix}\right]$$
 </div>
 
 </div>
@@ -659,7 +824,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">matrix_by_matrix</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
@@ -676,7 +841,7 @@ $</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>여기서 <strong>모듈화 프로그래밍</strong>의 효과를 톡톡히 알 수 있습니다.</p>
+<p>여기서 <strong>모듈화 프로그래밍</strong>의 효과를 톡톡히 볼 수 있습니다.</p>
 <p>분명 내적<code>dot_product</code>이나 '행렬-벡터 곱'<code>matrix_by_vector</code>이 더 간단한 연산임에도 불구하고,</p>
 <p>그것들보다 '행렬-행렬 곱'<code>matrix_by_matrix</code>을 더 간결하게 구현을 할 수 있음을 알 수 있습니다.</p>
 
@@ -695,7 +860,7 @@ $</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">matrix_by_matrix</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
@@ -709,11 +874,11 @@ $</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>[[14, 32, 50], [32, 77, 122], [50, 122, 194]]</pre>
+<div class="output_latex output_subarea output_execute_result">
+$$\left [ \left [ 14, \quad 32, \quad 50\right ], \quad \left [ 32, \quad 77, \quad 122\right ], \quad \left [ 50, \quad 122, \quad 194\right ]\right ]$$
 </div>
 
 </div>
@@ -727,10 +892,39 @@ $</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>* 검산 프로그램 구현은 생략하겠습니다.</p>
+<p>검산하면,</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left[\begin{matrix}14 & 32 & 50\\32 & 77 & 122\\50 & 122 & 194\end{matrix}\right]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
