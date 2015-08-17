@@ -230,7 +230,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
@@ -245,7 +245,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 
 <div class="output_jpeg output_subarea output_execute_result">
@@ -453,7 +453,7 @@ ONwD1G5VB5oA3qKKKAP/2Q==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">ALLOWABLE_ERROR</span> <span class="o">=</span> <span class="mf">0.001</span>
@@ -469,8 +469,19 @@ ONwD1G5VB5oA3qKKKAP/2Q==
         <span class="k">return</span> <span class="n">guess</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">sqrt_iter</span><span class="p">(</span><span class="n">improve</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
 
-<span class="n">sqrt_iter</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">sqrt_iter</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -481,7 +492,7 @@ ONwD1G5VB5oA3qKKKAP/2Q==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -493,6 +504,66 @@ ONwD1G5VB5oA3qKKKAP/2Q==
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>파이썬 표준 라이브러리인 <code>sqrt</code>로 대조해보면,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">sqrt_iter</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.123901414519125e-06</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>소수점 5째 자리까지 값이 일치함을 알 수 있습니다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음 글에서는 '복잡해보이는 문제를 간소화'하는 연습을 해보겠습니다.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
