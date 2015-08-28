@@ -265,10 +265,13 @@ sequence : 연산을 적용할 리스트</code></pre>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">accumulate</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+
+<span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
     
-<span class="n">summation</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">numbers0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">summation</span><span class="p">(</span><span class="n">numbers0</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -353,12 +356,13 @@ seqs : 연산을 적용할 이차원 리스트</code></pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">sum_sequences</span><span class="p">(</span><span class="n">seqs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">accumulate_n</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">,</span>
+        <span class="n">add</span><span class="p">,</span>
         <span class="mi">0</span><span class="p">,</span>
         <span class="n">seqs</span>
     <span class="p">)</span>
 
-<span class="n">sum_sequences</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)])</span>
+<span class="n">numbers1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
+<span class="n">sum_sequences</span><span class="p">(</span><span class="n">numbers1</span><span class="p">)</span>
 </pre></div>
 
 </div>
