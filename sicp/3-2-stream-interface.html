@@ -232,7 +232,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(1, &lt;generator object promise at 0x10420d9d8&gt;)</pre>
+<pre>(1, &lt;generator object promise at 0x104112a20&gt;)</pre>
 </div>
 
 </div>
@@ -477,11 +477,12 @@ div#notebook {
         <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">apply</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
     
     
-<span class="k">def</span> <span class="nf">nth_elements_extractor</span><span class="p">(</span><span class="n">sqs</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sqs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">nth_elements_extractor</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">sqs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">index</span><span class="p">],)</span> <span class="o">+</span> <span class="n">nth_elements_extractor</span><span class="p">(</span><span class="n">sqs</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">index</span><span class="p">],)</span> <span class="o">+</span> \
+            <span class="n">nth_elements_extractor</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">index</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">stream_map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">argstreams</span><span class="p">):</span>
