@@ -188,18 +188,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>수식으로 표현하면,</p>
-<h3 id="$f(f(f...(f(x)))...)-=-x$">$f(f(f...(f(x)))...) = x$<a class="anchor-link" href="#$f(f(f...(f(x)))...)-=-x$">&#182;</a></h3><p>이 때의 x를 f의 고정점fixed point이라고 합니다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>여기서는 이 방법을 이용해 연속분수 문제를 해결해보겠습니다.</p>
+<p>여기서는 이런 반복 연산을 적용할 수 있는 다른 예로 <strong>'연속 분수'</strong> 문제를 풀어보겠습니다.</p>
 
 </div>
 </div>
@@ -233,8 +222,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>따라서 연속 분수는 동일한 연산을 반복하는 과정이므로</p>
-<p>연속 분수의 값은 고정점 찾기로 구할 수 있습니다.</p>
+<p>연속 분수를 표현하는 함수를 <code>continued_fraction</code>이라고 명칭하겠습니다.</p>
 
 </div>
 </div>
@@ -244,7 +232,23 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>고정점을 찾는 함수가 있다고 가정하고,</p>
+<p>만들어야 할 <code>continued_fraction</code> 함수는 다음과 같은 성질을 가집니다.</p>
+
+<pre><code>continued_fraction(n, d, op, k)
+n: 분자값을 구하기 위한 함수
+d: 분모값을 구하기 위한 함수
+op: 분수 사이에 들어갈 연산
+k: k번째까지의 분자값, 분모값이 있는 연속 분수</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>continued_fraction</code> 함수가 있다고 가정하고,</p>
 <p>문제를 하나 풀어보겠습니다.</p>
 <p>아래는 연속 분수로 나타낸 탄젠트 함수입니다.</p>
 
@@ -257,17 +261,6 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="$tan\-x-=-\frac{x}{1---\frac{x^2}{3---\frac{x^2}{5---...}}}$">$tan\ x = \frac{x}{1 - \frac{x^2}{3 - \frac{x^2}{5 - ...}}}$<a class="anchor-link" href="#$tan\-x-=-\frac{x}{1---\frac{x^2}{3---\frac{x^2}{5---...}}}$">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>연속 분수에서 고정점을 찾는 함수의 이름을 <code>continued_fraction</code>으로 두고</p>
-<p>이 문제를 푸는 코드를 작성하면,</p>
-
 </div>
 </div>
 </div>
@@ -289,22 +282,6 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>만들어야 할 <code>continued_fraction</code> 함수는 다음과 같은 성질을 가집니다.</p>
-
-<pre><code>continued_fraction(n, d, op, k)
-n: 분자값을 구하기 위한 함수
-d: 분모값을 구하기 위한 함수
-op: 분수 사이에 들어갈 연산
-k: k번째까지의 분자값, 분모값이 있는 연속 분수</code></pre>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -561,16 +538,6 @@ k: k번째까지의 분자값, 분모값이 있는 연속 분수</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>매우 적은 n 값으로도($n=5$) 파이썬 라이브러리에서 제공하는 $tan$ 값과 근사하게 다다감을 알 수 있습니다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>다음 글에서는 '프로그램을 만들 수 있는 조건에 대한 가정'에 대한 이야기와 그에 들어맞는 문제를 풀어보겠습니다.</p>
 
 </div>
 </div>
