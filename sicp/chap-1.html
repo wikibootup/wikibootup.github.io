@@ -1000,7 +1000,7 @@ $x=n$인 경우를 생각해보겠습니다. 수학적으로는 어떻게 정의
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">cc</span><span class="o">-</span><span class="n">new</span> <span class="n">amount</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span> <span class="n">count</span><span class="p">)</span>
+<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">cc</span><span class="o">-</span><span class="n">iter</span> <span class="n">amount</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span> <span class="n">count</span><span class="p">)</span>
   <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="ow">=</span> <span class="n">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span> <span class="n">count</span> <span class="mi">1</span><span class="p">))</span>
 		<span class="p">((</span><span class="n">or</span> <span class="p">(</span><span class="o">&lt;</span> <span class="n">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="ow">=</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span> <span class="mi">0</span><span class="p">))</span> <span class="n">count</span><span class="p">)</span>
 		<span class="p">(</span><span class="kr">else</span> <span class="p">(</span><span class="n">cc</span><span class="o">-</span><span class="n">iter</span> <span class="p">(</span><span class="o">-</span> <span class="n">amount</span> <span class="p">(</span><span class="n">first</span><span class="o">-</span><span class="n">denomination</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span><span class="p">))</span>
@@ -1062,7 +1062,7 @@ $f(4) = f(3) + 2f(2) + 3f(3)$, ...</p>
 인자값이 늘어난다고 해서 연산수가 엄청나게 늘어나는 일은 피할 수 있습니다.</li>
 </ul>
 <ul>
-<li>파스칼 값 1부터 100 정도<code>(pascal 1000)</code>는 바로 구할 수 있습니다. 하지만 <code>(pascal 1000)</code>은<br>
+<li>파스칼 값 1부터 100 정도<code>(pascal 100)</code>는 바로 구할 수 있습니다. 하지만 <code>(pascal 1000)</code>은<br>
 참아주기에는 조금 긴 것 같습니다( 5초 이상 ).</li>
 </ul>
 
