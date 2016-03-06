@@ -291,35 +291,35 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="o">#</span> <span class="n">reference</span> <span class="n">for</span> <span class="kt">Compound</span> <span class="o">&amp;</span> <span class="kt">Abstraction</span>
+<div class=" highlight hl-scheme"><pre><span class="o">#</span> <span class="nv">reference</span> <span class="nv">for</span> <span class="nv">Compound</span> <span class="nv">&amp;</span> <span class="nv">Abstraction</span>
 
-<span class="kr">class</span> <span class="kt">Job:</span>
-    <span class="n">def</span> <span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">wage</span><span class="p">)</span><span class="kt">:</span>
-        <span class="n">self</span><span class="o">.</span><span class="n">job</span> <span class="ow">=</span> <span class="n">job</span>
-        <span class="n">self</span><span class="o">.</span><span class="n">wage</span> <span class="ow">=</span> <span class="n">wage</span>
+<span class="nv">class</span> <span class="nv">Job:</span>
+    <span class="nv">def</span> <span class="nv">__init__</span><span class="p">(</span><span class="nf">self,</span> <span class="nv">job,</span> <span class="nv">wage</span><span class="p">)</span><span class="nv">:</span>
+        <span class="nv">self</span><span class="o">.</span><span class="nv">job</span> <span class="nv">=</span> <span class="nv">job</span>
+        <span class="nv">self</span><span class="o">.</span><span class="nv">wage</span> <span class="nv">=</span> <span class="nv">wage</span>
         
         
-<span class="kr">class</span> <span class="kt">Singer</span><span class="p">(</span><span class="kt">Job</span><span class="p">)</span><span class="kt">:</span>
-    <span class="n">def</span> <span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">genre</span><span class="p">,</span> <span class="n">agency</span><span class="ow">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">members</span><span class="ow">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">wage</span><span class="ow">=</span><span class="mi">0</span><span class="p">)</span><span class="kt">:</span>
-        <span class="n">super</span><span class="p">(</span><span class="kt">Singer</span><span class="p">,</span> <span class="n">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s">&quot;singer&quot;</span><span class="p">,</span> <span class="n">wage</span><span class="p">)</span>
-        <span class="n">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">=</span> <span class="n">name</span>
-        <span class="n">self</span><span class="o">.</span><span class="n">genre</span> <span class="ow">=</span> <span class="n">genre</span>
-        <span class="n">self</span><span class="o">.</span><span class="n">agency</span> <span class="ow">=</span> <span class="n">agency</span>
-        <span class="n">self</span><span class="o">.</span><span class="n">members</span> <span class="ow">=</span> <span class="n">members</span>
+<span class="nv">class</span> <span class="nv">Singer</span><span class="p">(</span><span class="nf">Job</span><span class="p">)</span><span class="nv">:</span>
+    <span class="nv">def</span> <span class="nv">__init__</span><span class="p">(</span><span class="nf">self,</span> <span class="nv">name,</span> <span class="nv">genre,</span> <span class="nv">agency=</span><span class="s">&quot;&quot;</span><span class="o">,</span> <span class="nv">members=1,</span> <span class="nv">wage=0</span><span class="p">)</span><span class="nv">:</span>
+        <span class="nv">super</span><span class="p">(</span><span class="nf">Singer,</span> <span class="nv">self</span><span class="p">)</span><span class="o">.</span><span class="nv">__init__</span><span class="p">(</span><span class="s">&quot;singer&quot;</span><span class="o">,</span> <span class="nv">wage</span><span class="p">)</span>
+        <span class="nv">self</span><span class="o">.</span><span class="nv">name</span> <span class="nv">=</span> <span class="nv">name</span>
+        <span class="nv">self</span><span class="o">.</span><span class="nv">genre</span> <span class="nv">=</span> <span class="nv">genre</span>
+        <span class="nv">self</span><span class="o">.</span><span class="nv">agency</span> <span class="nv">=</span> <span class="nv">agency</span>
+        <span class="nv">self</span><span class="o">.</span><span class="nv">members</span> <span class="nv">=</span> <span class="nv">members</span>
         
-    <span class="o">@</span><span class="n">property</span>
-    <span class="n">def</span> <span class="n">isGroup</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="kt">:</span>
-        <span class="kr">if</span> <span class="n">self</span><span class="o">.</span><span class="n">members</span> <span class="o">==</span> <span class="mi">1</span><span class="kt">:</span>
-            <span class="n">return</span> <span class="s">&quot;singer&quot;</span>
-        <span class="n">elif</span> <span class="n">self</span><span class="o">.</span><span class="n">members</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="kt">:</span>
-            <span class="n">return</span> <span class="s">&quot;group&quot;</span>
-        <span class="kr">else</span><span class="kt">:</span>
-            <span class="n">raise</span> <span class="kt">ValueError</span><span class="p">(</span><span class="s">&quot;No available value, at least 1 member required&quot;</span><span class="p">)</span>
+    <span class="nv">@property</span>
+    <span class="nv">def</span> <span class="nv">isGroup</span><span class="p">(</span><span class="nf">self</span><span class="p">)</span><span class="nv">:</span>
+        <span class="k">if </span><span class="nv">self</span><span class="o">.</span><span class="nv">members</span> <span class="nv">==</span> <span class="mi">1</span><span class="nv">:</span>
+            <span class="nv">return</span> <span class="s">&quot;singer&quot;</span>
+        <span class="nv">elif</span> <span class="nv">self</span><span class="o">.</span><span class="nv">members</span> <span class="nv">&gt;</span> <span class="mi">1</span><span class="nv">:</span>
+            <span class="nv">return</span> <span class="s">&quot;group&quot;</span>
+        <span class="nv">else:</span>
+            <span class="nv">raise</span> <span class="nv">ValueError</span><span class="p">(</span><span class="s">&quot;No available value, at least 1 member required&quot;</span><span class="p">)</span>
         
         
-<span class="nf">boys2men</span> <span class="ow">=</span> <span class="kt">Singer</span><span class="p">(</span><span class="n">name</span><span class="ow">=</span><span class="s">&quot;Boys 2 Men&quot;</span><span class="p">,</span> <span class="n">genre</span><span class="ow">=</span><span class="s">&quot;R&amp;B&quot;</span><span class="p">,</span> <span class="n">members</span><span class="ow">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">&quot;%s is the best %s %s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">boys2men</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">boys2men</span><span class="o">.</span><span class="n">genre</span><span class="p">,</span> 
-                                <span class="n">boys2men</span><span class="o">.</span><span class="n">isGroup</span><span class="p">))</span>
+<span class="nv">boys2men</span> <span class="nv">=</span> <span class="nv">Singer</span><span class="p">(</span><span class="nf">name=</span><span class="s">&quot;Boys 2 Men&quot;</span><span class="o">,</span> <span class="nv">genre=</span><span class="s">&quot;R&amp;B&quot;</span><span class="o">,</span> <span class="nv">members=3</span><span class="p">)</span>
+<span class="nv">print</span><span class="p">(</span><span class="s">&quot;%s is the best %s %s&quot;</span> <span class="nv">%</span> <span class="p">(</span><span class="nf">boys2men</span><span class="o">.</span><span class="nv">name,</span> <span class="nv">boys2men</span><span class="o">.</span><span class="nv">genre,</span> 
+                                <span class="nv">boys2men</span><span class="o">.</span><span class="nv">isGroup</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -381,8 +381,8 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">plus</span><span class="o">-</span><span class="n">abs</span><span class="o">-</span><span class="n">b</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
-  <span class="p">((</span><span class="kr">if</span> <span class="p">(</span><span class="o">&gt;</span> <span class="n">b</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="o">-</span><span class="p">)</span> <span class="n">a</span> <span class="n">b</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">a-plus-abs-b</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+  <span class="p">((</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">b</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">+</span> <span class="nv">-</span><span class="p">)</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -395,8 +395,8 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="n">a</span> <span class="ow">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="ow">=</span> <span class="cm">{-1, 0, 1}</span>
-<span class="cm">(a-plus-abs-b 1 (- 1))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; a = 1, b = {-1, 0, 1}</span>
+<span class="p">(</span><span class="nf">a-plus-abs-b</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">- </span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -425,7 +425,7 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">plus</span><span class="o">-</span><span class="n">abs</span><span class="o">-</span><span class="n">b</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nf">a-plus-abs-b</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -454,7 +454,7 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">plus</span><span class="o">-</span><span class="n">abs</span><span class="o">-</span><span class="n">b</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nf">a-plus-abs-b</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -496,16 +496,16 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="kt">Scheme</span> <span class="kt">:</span> <span class="kt">Applicative</span> <span class="n">order</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; Scheme : Applicative order</span>
 
-<span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">p</span><span class="p">))</span>
 
-<span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">test</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span>
-  <span class="p">(</span><span class="kr">if</span> <span class="p">(</span><span class="ow">=</span> <span class="n">x</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">test</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">x</span> <span class="mi">0</span><span class="p">)</span>
       <span class="mi">0</span>
-      <span class="n">y</span><span class="p">))</span>
+      <span class="nv">y</span><span class="p">))</span>
 
-<span class="p">;;</span> <span class="p">(</span><span class="n">test</span> <span class="mi">0</span> <span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="c1">;; (test 0 (p))</span>
 </pre></div>
 
 </div>
@@ -518,18 +518,18 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="kt">Python</span> <span class="kt">:</span> <span class="kt">Applicative</span> <span class="n">order</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; Python : Applicative order</span>
 
-<span class="nf">def</span> <span class="n">p</span><span class="nb">()</span><span class="kt">:</span>
-    <span class="n">return</span> <span class="n">p</span><span class="nb">()</span>
+<span class="nv">def</span> <span class="nv">p</span><span class="p">()</span><span class="nv">:</span>
+    <span class="nv">return</span> <span class="nv">p</span><span class="p">()</span>
     
-<span class="nf">def</span> <span class="n">test</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="kt">:</span>
-    <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="kt">:</span>
-        <span class="n">return</span> <span class="mi">0</span>
-    <span class="kr">else</span><span class="kt">:</span>
-        <span class="n">return</span> <span class="n">y</span>
+<span class="nv">def</span> <span class="nv">test</span><span class="p">(</span><span class="nf">x,</span> <span class="nv">y</span><span class="p">)</span><span class="nv">:</span>
+    <span class="k">if </span><span class="nv">x</span> <span class="nv">==</span> <span class="mi">0</span><span class="nv">:</span>
+        <span class="nv">return</span> <span class="mi">0</span>
+    <span class="nv">else:</span>
+        <span class="nv">return</span> <span class="nv">y</span>
 
-<span class="o">#</span> <span class="n">test</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="nb">()</span><span class="p">)</span>
+<span class="o">#</span> <span class="nv">test</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="nv">p</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -542,15 +542,15 @@ Evaluator라고 불리는 계산을 하는 프로그램이 있어, 이 둘 사�
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="c1">-- Haskell : Normal order(Lazy Evaluaton)</span>
+<div class=" highlight hl-scheme"><pre><span class="nv">--</span> <span class="nv">Haskell</span> <span class="nv">:</span> <span class="nv">Normal</span> <span class="nv">order</span><span class="p">(</span><span class="nf">Lazy</span> <span class="nv">Evaluaton</span><span class="p">)</span>
 
-<span class="nf">p</span> <span class="ow">=</span> <span class="n">p</span>
-<span class="nf">test</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span>
-    <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="kr">then</span> <span class="mi">0</span>
-    <span class="kr">else</span> <span class="n">p</span>
+<span class="nv">p</span> <span class="nv">=</span> <span class="nv">p</span>
+<span class="nv">test</span> <span class="nv">x</span> <span class="nv">y</span> <span class="nv">=</span>
+    <span class="k">if </span><span class="nv">x</span> <span class="nv">==</span> <span class="mi">0</span>
+    <span class="nv">then</span> <span class="mi">0</span>
+    <span class="k">else </span><span class="nv">p</span>
     
-<span class="nf">test</span> <span class="mi">0</span> <span class="n">p</span>
+<span class="nv">test</span> <span class="mi">0</span> <span class="nv">p</span>
 </pre></div>
 
 </div>
@@ -598,11 +598,11 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">new</span><span class="o">-</span><span class="kr">if</span> <span class="n">predicate</span>
-                <span class="kr">then</span><span class="o">-</span><span class="n">clause</span>
-				<span class="kr">else</span><span class="o">-</span><span class="n">clause</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">cond</span> <span class="p">(</span><span class="n">predicate</span> <span class="kr">then</span><span class="o">-</span><span class="n">clause</span><span class="p">)</span>
-		<span class="p">(</span><span class="kr">else</span> <span class="kr">else</span><span class="o">-</span><span class="n">clause</span><span class="p">)))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">new-if</span> <span class="nv">predicate</span>
+                <span class="nv">then-clause</span>
+				<span class="nv">else-clause</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond </span><span class="p">(</span><span class="nf">predicate</span> <span class="nv">then-clause</span><span class="p">)</span>
+		<span class="p">(</span><span class="k">else </span><span class="nv">else-clause</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -638,16 +638,16 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">average</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span>
-  <span class="p">(</span><span class="o">/</span> <span class="p">(</span><span class="o">+</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="mi">2</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">average</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">/ </span><span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="mi">2</span><span class="p">))</span>
 
-<span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">averages</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">average</span> <span class="n">x</span> <span class="n">y</span> <span class="n">n</span><span class="p">)</span>
-  <span class="p">(</span><span class="kr">if</span> <span class="p">(</span><span class="ow">=</span> <span class="n">n</span> <span class="mi">0</span><span class="p">)</span> 
-      <span class="n">x</span>
-      <span class="p">(</span><span class="n">averages</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">average</span> <span class="p">(</span><span class="n">average</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="n">y</span> <span class="p">(</span><span class="o">-</span> <span class="n">n</span> <span class="mi">1</span><span class="p">))))</span>
+<span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">averages-of-average</span> <span class="nv">x</span> <span class="nv">y</span> <span class="nv">n</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">n</span> <span class="mi">0</span><span class="p">)</span> 
+      <span class="nv">x</span>
+      <span class="p">(</span><span class="nf">averages-of-average</span> <span class="p">(</span><span class="nf">average</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="nv">y</span> <span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">1</span><span class="p">))))</span>
 
 
-<span class="p">(</span><span class="n">averages</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">average</span> <span class="mf">1.0</span> <span class="mi">2</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">averages-of-average</span> <span class="mf">1.0</span> <span class="mi">2</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -690,7 +690,7 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-7.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-7.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -703,7 +703,7 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="n">sqrt</span><span class="o">-</span><span class="n">newton</span><span class="o">-</span><span class="n">law</span> <span class="n">x</span><span class="p">))</span> <span class="p">(</span><span class="n">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">sqrt-newton-law</span> <span class="nv">x</span><span class="p">))</span> <span class="p">(</span><span class="nb">list </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -732,7 +732,7 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="n">sqrt</span><span class="o">-</span><span class="n">slightly</span> <span class="n">x</span><span class="p">))</span> <span class="p">(</span><span class="n">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">sqrt-slightly</span> <span class="nv">x</span><span class="p">))</span> <span class="p">(</span><span class="nb">list </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -772,8 +772,8 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-8.scm&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">load</span> <span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-8.scm&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">load </span><span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -786,8 +786,8 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="n">test</span> <span class="kt">:</span> <span class="mi">1</span><span class="o">^</span><span class="mi">3</span> <span class="mi">2</span><span class="o">^</span><span class="mi">3</span> <span class="o">...</span> <span class="mi">10</span><span class="o">^</span><span class="mi">3</span>
-<span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="n">cube</span><span class="o">-</span><span class="n">root</span> <span class="p">(</span><span class="n">power</span> <span class="n">x</span> <span class="mi">3</span><span class="p">)))</span> <span class="p">(</span><span class="n">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">10</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; test : 1^3 2^3 ... 10^3</span>
+<span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">cube-root</span> <span class="p">(</span><span class="nf">power</span> <span class="nv">x</span> <span class="mi">3</span><span class="p">)))</span> <span class="p">(</span><span class="nb">list </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -831,15 +831,15 @@ applicative order를 따르기 때문에 무한루프에 빠지게 됩니다.</p
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="o">+</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="kr">if</span> <span class="p">(</span><span class="ow">=</span> <span class="n">a</span> <span class="mi">0</span><span class="p">)</span> 
-      <span class="n">b</span> 
-      <span class="p">(</span><span class="n">inc</span> <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="n">dec</span> <span class="n">a</span><span class="p">)</span> <span class="n">b</span><span class="p">))))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">a</span> <span class="mi">0</span><span class="p">)</span> 
+      <span class="nv">b</span> 
+      <span class="p">(</span><span class="nf">inc</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">dec</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">b</span><span class="p">))))</span>
 
-<span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="o">+</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="kr">if</span> <span class="p">(</span><span class="ow">=</span> <span class="n">a</span> <span class="mi">0</span><span class="p">)</span> 
-      <span class="n">b</span> 
-      <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="n">dec</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="n">inc</span> <span class="n">b</span><span class="p">))))</span>
+<span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">a</span> <span class="mi">0</span><span class="p">)</span> 
+      <span class="nv">b</span> 
+      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">dec</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nf">inc</span> <span class="nv">b</span><span class="p">))))</span>
 </pre></div>
 
 </div>
@@ -884,12 +884,12 @@ $x=n$인 경우를 생각해보겠습니다. 수학적으로는 어떻게 정의
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="kt">A</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="ow">=</span> <span class="n">y</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-		<span class="p">((</span><span class="ow">=</span> <span class="n">x</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span> <span class="mi">2</span> <span class="n">y</span><span class="p">))</span>
-		<span class="p">((</span><span class="ow">=</span> <span class="n">y</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>
-		<span class="p">(</span><span class="kr">else</span> <span class="p">(</span><span class="kt">A</span> <span class="p">(</span><span class="o">-</span> <span class="n">x</span> <span class="mi">1</span><span class="p">)</span>
-				 <span class="p">(</span><span class="kt">A</span> <span class="n">x</span> <span class="p">(</span><span class="o">-</span> <span class="n">y</span> <span class="mi">1</span><span class="p">))))))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">A</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond </span><span class="p">((</span><span class="nb">= </span><span class="nv">y</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">((</span><span class="nb">= </span><span class="nv">x</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="mi">2</span> <span class="nv">y</span><span class="p">))</span>
+		<span class="p">((</span><span class="nb">= </span><span class="nv">y</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>
+		<span class="p">(</span><span class="k">else </span><span class="p">(</span><span class="nf">A</span> <span class="p">(</span><span class="nb">- </span><span class="nv">x</span> <span class="mi">1</span><span class="p">)</span>
+				 <span class="p">(</span><span class="nf">A</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">- </span><span class="nv">y</span> <span class="mi">1</span><span class="p">))))))</span>
 </pre></div>
 
 </div>
@@ -902,12 +902,12 @@ $x=n$인 경우를 생각해보겠습니다. 수학적으로는 어떻게 정의
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">and</span> <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">1</span> <span class="mi">10</span><span class="p">)</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="mi">10</span><span class="p">))</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)))</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="p">(</span><span class="n">pow</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))))</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">3</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="kt">A</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">)))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="mi">10</span><span class="p">)</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="mi">10</span><span class="p">))</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)))</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">pow</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))))</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">A</span> <span class="mi">3</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">A</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -958,13 +958,13 @@ $x=n$인 경우를 생각해보겠습니다. 수학적으로는 어떻게 정의
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">fib</span> <span class="n">n</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">fib</span><span class="o">-</span><span class="n">iter</span> <span class="mi">1</span> <span class="mi">0</span> <span class="n">n</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">fib</span> <span class="nv">n</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">fib-iter</span> <span class="mi">1</span> <span class="mi">0</span> <span class="nv">n</span><span class="p">))</span>
 
-<span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">fib</span><span class="o">-</span><span class="n">iter</span> <span class="n">a</span> <span class="n">b</span> <span class="n">count</span><span class="p">)</span>
-  <span class="p">(</span><span class="kr">if</span> <span class="p">(</span><span class="ow">=</span> <span class="n">count</span> <span class="mi">0</span><span class="p">)</span>
-      <span class="n">b</span>
-      <span class="p">(</span><span class="n">fib</span><span class="o">-</span><span class="n">iter</span> <span class="p">(</span><span class="o">+</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span> <span class="n">a</span> <span class="p">(</span><span class="o">-</span> <span class="n">count</span> <span class="mi">1</span><span class="p">))))</span>
+<span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">fib-iter</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">count</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="nv">b</span>
+      <span class="p">(</span><span class="nf">fib-iter</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">a</span> <span class="p">(</span><span class="nb">- </span><span class="nv">count</span> <span class="mi">1</span><span class="p">))))</span>
 </pre></div>
 
 </div>
@@ -1000,12 +1000,12 @@ $x=n$인 경우를 생각해보겠습니다. 수학적으로는 어떻게 정의
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">cc</span><span class="o">-</span><span class="n">iter</span> <span class="n">amount</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span> <span class="n">count</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="ow">=</span> <span class="n">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span> <span class="n">count</span> <span class="mi">1</span><span class="p">))</span>
-		<span class="p">((</span><span class="n">or</span> <span class="p">(</span><span class="o">&lt;</span> <span class="n">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="ow">=</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span> <span class="mi">0</span><span class="p">))</span> <span class="n">count</span><span class="p">)</span>
-		<span class="p">(</span><span class="kr">else</span> <span class="p">(</span><span class="n">cc</span><span class="o">-</span><span class="n">iter</span> <span class="p">(</span><span class="o">-</span> <span class="n">amount</span> <span class="p">(</span><span class="n">first</span><span class="o">-</span><span class="n">denomination</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span><span class="p">))</span>
-					   <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span>
-					   <span class="p">(</span><span class="n">cc</span><span class="o">-</span><span class="n">iter</span> <span class="n">amount</span> <span class="p">(</span><span class="o">-</span> <span class="n">kinds</span><span class="o">-</span><span class="kr">of</span><span class="o">-</span><span class="n">coins</span> <span class="mi">1</span><span class="p">)</span> <span class="n">count</span><span class="p">)))))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">cc-iter</span> <span class="nv">amount</span> <span class="nv">kinds-of-coins</span> <span class="nv">count</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond </span><span class="p">((</span><span class="nb">= </span><span class="nv">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">count</span> <span class="mi">1</span><span class="p">))</span>
+		<span class="p">((</span><span class="k">or </span><span class="p">(</span><span class="nb">&lt; </span><span class="nv">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="nv">kinds-of-coins</span> <span class="mi">0</span><span class="p">))</span> <span class="nv">count</span><span class="p">)</span>
+		<span class="p">(</span><span class="k">else </span><span class="p">(</span><span class="nf">cc-iter</span> <span class="p">(</span><span class="nb">- </span><span class="nv">amount</span> <span class="p">(</span><span class="nf">first-denomination</span> <span class="nv">kinds-of-coins</span><span class="p">))</span>
+					   <span class="nv">kinds-of-coins</span>
+					   <span class="p">(</span><span class="nf">cc-iter</span> <span class="nv">amount</span> <span class="p">(</span><span class="nb">- </span><span class="nv">kinds-of-coins</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">count</span><span class="p">)))))</span>
 </pre></div>
 
 </div>
@@ -1074,7 +1074,7 @@ $f(4) = f(3) + 2f(2) + 3f(3)$, ...</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-12.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-12.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1087,7 +1087,7 @@ $f(4) = f(3) + 2f(2) + 3f(3)$, ...</p>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">pascal</span> <span class="mi">100</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nf">pascal</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1158,8 +1158,8 @@ Fib(n-1) + Fib(n-2) & \mbox{otherwise } \end{cases} $</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-13.scm&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">load</span> <span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-13.scm&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">load </span><span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1172,7 +1172,7 @@ Fib(n-1) + Fib(n-2) & \mbox{otherwise } \end{cases} $</p>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">gradually</span><span class="o">-</span><span class="n">decreasing</span> <span class="n">fib</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">(</span><span class="o">/</span> <span class="p">(</span><span class="n">power</span> <span class="n">phi</span> <span class="n">n</span><span class="p">)</span> <span class="p">(</span><span class="n">sqrt</span> <span class="mi">5</span><span class="p">)))</span> <span class="mi">35</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nf">gradually-decreasing</span> <span class="nv">fib</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">n</span><span class="p">)</span> <span class="p">(</span><span class="nb">/ </span><span class="p">(</span><span class="nf">power</span> <span class="nv">phi</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nb">sqrt </span><span class="mi">5</span><span class="p">)))</span> <span class="mi">35</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1244,12 +1244,9 @@ Fib(n-1) + Fib(n-2) & \mbox{otherwise } \end{cases} $</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h1 id="Exercise-1.14"><a href="https://github.com/my-snippet/SICP/blob/master/sicp/ex-1-14.png">Exercise 1.14</a><a class="anchor-link" href="#Exercise-1.14">&#182;</a></h1><ul>
-<li>그래프
-문제에서 사용한 동전 바꾸기 알고리즘은 사실 모든 경우의 수를 고려하는 구현입니다. 그러므로 이 프로세스의<br>
-연산량은 돈보다는 동전 개수에 민감하게 증가합니다. 예를 들어, 돈이 아무리 많아도 동전 개수가 1개라면<br>
-가능한 동전 조합은 1개이지만, 동전 개수가 2개만 되어도 가능한 동전 조합은 많아집니다.   </li>
-</ul>
+<h1 id="Exercise-1.14"><a href="https://github.com/my-snippet/SICP/blob/master/sicp/ex-1-14.png">Exercise 1.14</a><a class="anchor-link" href="#Exercise-1.14">&#182;</a></h1><p>동전 바꾸기 알고리즘은 사실 모든 경우의 수를 고려하는 구현입니다. 그러므로 이 프로세스의 연산량은 돈보다는<br>
+동전 개수에 민감하게 증가합니다. 예를 들어, 돈이 아무리 많아도 동전 개수가 1개라면 가능한 동전 조합은<br>
+1개이지만, 동전 개수가 2개만 되어도 가능한 동전 조합은 많아집니다.</p>
 <p>이 알고리즘은 동전을 한 번에 한개씩 뽑아내므로 아래와 같이 예를 들어보겠습니다.</p>
 <p><strong>a. 한가지 동전으로 돈 바꾸기</strong></p>
 <ul>
@@ -1341,8 +1338,8 @@ time."( <a href="https://www.quora.com/What-is-the-space-complexity-of-a-recursi
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-16.scm&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">load</span> <span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-16.scm&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">load </span><span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1355,7 +1352,7 @@ time."( <a href="https://www.quora.com/What-is-the-space-complexity-of-a-recursi
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">(</span><span class="n">fast</span><span class="o">-</span><span class="n">expt2</span> <span class="mi">4</span> <span class="n">n</span><span class="p">))</span> <span class="p">(</span><span class="n">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">20</span> <span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">fast-expt2</span> <span class="mi">4</span> <span class="nv">n</span><span class="p">))</span> <span class="p">(</span><span class="nb">list </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">20</span> <span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1399,7 +1396,7 @@ time."( <a href="https://www.quora.com/What-is-the-space-complexity-of-a-recursi
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-17.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-17.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1412,11 +1409,11 @@ time."( <a href="https://www.quora.com/What-is-the-space-complexity-of-a-recursi
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="n">iterative</span>
-<span class="p">;;</span> <span class="s">&quot;17 * 0 = 0 * 17 = 0&quot;</span>
-<span class="p">;;</span> <span class="s">&quot;(17 * 17) - (17 * 16) = 17&quot;</span>
-<span class="p">(</span><span class="n">and</span> <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="o">*</span><span class="kr">_</span> <span class="mi">17</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="o">*</span><span class="kr">_</span> <span class="mi">0</span> <span class="mi">17</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="o">*</span><span class="kr">_</span> <span class="mi">17</span> <span class="mi">17</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="kr">_</span> <span class="mi">17</span> <span class="mi">16</span><span class="p">))</span> <span class="mi">17</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; iterative</span>
+<span class="c1">;; &quot;17 * 0 = 0 * 17 = 0&quot;</span>
+<span class="c1">;; &quot;(17 * 17) - (17 * 16) = 17&quot;</span>
+<span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">*_</span> <span class="mi">17</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">*_</span> <span class="mi">0</span> <span class="mi">17</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nb">- </span><span class="p">(</span><span class="nf">*_</span> <span class="mi">17</span> <span class="mi">17</span><span class="p">)</span> <span class="p">(</span><span class="nf">*_</span> <span class="mi">17</span> <span class="mi">16</span><span class="p">))</span> <span class="mi">17</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1445,9 +1442,9 @@ time."( <a href="https://www.quora.com/What-is-the-space-complexity-of-a-recursi
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="n">recursive</span>
-<span class="p">(</span><span class="n">and</span> <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="o">*</span><span class="kr">_</span> <span class="mi">17</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="o">*</span><span class="kr">_</span> <span class="mi">0</span> <span class="mi">17</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-     <span class="p">(</span><span class="ow">=</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="o">*-</span><span class="n">recursive</span> <span class="mi">17</span> <span class="mi">17</span><span class="p">)</span> <span class="p">(</span><span class="o">*-</span><span class="n">recursive</span> <span class="mi">17</span> <span class="mi">16</span><span class="p">))</span> <span class="mi">17</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; recursive</span>
+<span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">*_</span> <span class="mi">17</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">*_</span> <span class="mi">0</span> <span class="mi">17</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nb">- </span><span class="p">(</span><span class="nf">*-recursive</span> <span class="mi">17</span> <span class="mi">17</span><span class="p">)</span> <span class="p">(</span><span class="nf">*-recursive</span> <span class="mi">17</span> <span class="mi">16</span><span class="p">))</span> <span class="mi">17</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1502,7 +1499,7 @@ $p=p', q=q'$이 있다면 $T_{pq}^{2n} = T_{p'q'}^n$입니다. 즉, $T_{pq}^2 = 
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-19.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-19.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1515,8 +1512,8 @@ $p=p', q=q'$이 있다면 $T_{pq}^{2n} = T_{p'q'}^n$입니다. 즉, $T_{pq}^2 = 
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">(</span><span class="n">fib</span><span class="o">-</span><span class="n">advanced</span> <span class="n">n</span><span class="p">))</span> 
-     <span class="p">(</span><span class="n">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">50</span> <span class="mi">51</span> <span class="mi">52</span> <span class="mi">53</span> <span class="mi">54</span> <span class="mi">55</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">fib-advanced</span> <span class="nv">n</span><span class="p">))</span> 
+     <span class="p">(</span><span class="nb">list </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">50</span> <span class="mi">51</span> <span class="mi">52</span> <span class="mi">53</span> <span class="mi">54</span> <span class="mi">55</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1678,8 +1675,8 @@ Overflow</code>의 위험이 있습니다. 따라서, $(xy \mod n) = ((x \mod n)
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-27.scm&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">load</span> <span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-27.scm&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">load </span><span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1692,10 +1689,10 @@ Overflow</code>의 위험이 있습니다. 따라서, $(xy \mod n) = ((x \mod n)
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="s">&quot;Prime numbers can pass Carmichael test&quot;</span>
-<span class="p">(</span><span class="n">and</span> <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="mi">2</span><span class="p">)</span>
-     <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="mi">3</span><span class="p">)</span>
-     <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; &quot;Prime numbers can pass Carmichael test&quot;</span>
+<span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nf">carmichael?</span> <span class="mi">2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">carmichael?</span> <span class="mi">3</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">carmichael?</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1724,11 +1721,11 @@ Overflow</code>의 위험이 있습니다. 따라서, $(xy \mod n) = ((x \mod n)
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span><span class="s">&quot;a number which is not Prime and Carmichael,</span>
-<span class="s">;; cannot pass carmichael? test&quot;</span>
-<span class="p">(</span><span class="n">not</span> <span class="p">(</span><span class="n">and</span> <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="mi">4</span><span class="p">)</span>
-          <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="mi">9</span><span class="p">)</span>
-          <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="mi">16</span><span class="p">)))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;;&quot;a number which is not Prime and Carmichael,</span>
+<span class="c1">;; cannot pass carmichael? test&quot;</span>
+<span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nf">carmichael?</span> <span class="mi">4</span><span class="p">)</span>
+          <span class="p">(</span><span class="nf">carmichael?</span> <span class="mi">9</span><span class="p">)</span>
+          <span class="p">(</span><span class="nf">carmichael?</span> <span class="mi">16</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -1757,11 +1754,11 @@ Overflow</code>의 위험이 있습니다. 따라서, $(xy \mod n) = ((x \mod n)
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="mi">561</span> <span class="ow">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">187</span><span class="p">,</span> <span class="mi">1105</span> <span class="ow">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">221</span><span class="p">,</span> <span class="mi">1729</span> <span class="ow">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">247</span>
-<span class="p">;;</span> <span class="s">&quot;First 3 Carmichaels detection&quot;</span>
-<span class="p">(</span><span class="n">and</span> <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="p">(</span><span class="o">*</span> <span class="mi">3</span> <span class="mi">187</span><span class="p">))</span>
-     <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="p">(</span><span class="o">*</span> <span class="mi">5</span> <span class="mi">221</span><span class="p">))</span>
-     <span class="p">(</span><span class="n">carmichael</span><span class="o">?</span> <span class="p">(</span><span class="o">*</span> <span class="mi">7</span> <span class="mi">247</span><span class="p">)))</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; 561 = 3 * 187, 1105 = 5 * 221, 1729 = 7 * 247</span>
+<span class="c1">;; &quot;First 3 Carmichaels detection&quot;</span>
+<span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nf">carmichael?</span> <span class="p">(</span><span class="nb">* </span><span class="mi">3</span> <span class="mi">187</span><span class="p">))</span>
+     <span class="p">(</span><span class="nf">carmichael?</span> <span class="p">(</span><span class="nb">* </span><span class="mi">5</span> <span class="mi">221</span><span class="p">))</span>
+     <span class="p">(</span><span class="nf">carmichael?</span> <span class="p">(</span><span class="nb">* </span><span class="mi">7</span> <span class="mi">247</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -1838,10 +1835,10 @@ Overflow</code>의 위험이 있습니다. 따라서, $(xy \mod n) = ((x \mod n)
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">identity</span> <span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">identity</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">x</span><span class="p">)</span>
 
-<span class="p">(</span><span class="n">define</span> <span class="p">(</span><span class="n">sum</span><span class="o">-</span><span class="n">integers</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">sum</span> <span class="n">identity</span> <span class="n">a</span> <span class="n">inc</span> <span class="n">b</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum-integers</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">sum</span> <span class="nv">identity</span> <span class="nv">a</span> <span class="nv">inc</span> <span class="nv">b</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1891,8 +1888,8 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-31.scm&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">load</span> <span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-31.scm&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">load </span><span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1905,11 +1902,11 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">;;</span> <span class="s">&quot;pi-using-product gradually close to 3.14&quot;</span>
-<span class="p">(</span><span class="n">gradually</span><span class="o">-</span><span class="n">closing</span> <span class="n">pi</span><span class="o">-</span><span class="n">using</span><span class="o">-</span><span class="n">product</span>
+<div class=" highlight hl-scheme"><pre><span class="c1">;; &quot;pi-using-product gradually close to 3.14&quot;</span>
+<span class="p">(</span><span class="nf">gradually-closing</span> <span class="nv">pi-using-product</span>
                    <span class="mf">3.14159</span>
                    <span class="mi">1000</span>
-                   <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span> <span class="n">x</span> <span class="mi">100</span><span class="p">)))</span>
+                   <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">100</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -2027,10 +2024,10 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="nf">from</span> <span class="n">math</span> <span class="kr">import</span> <span class="nn">log2</span>
-<span class="nf">from</span> <span class="n">statistics</span> <span class="kr">import</span> <span class="nn">mean</span>
+<div class=" highlight hl-scheme"><pre><span class="nv">from</span> <span class="nv">math</span> <span class="nv">import</span> <span class="nv">log2</span>
+<span class="nv">from</span> <span class="nv">statistics</span> <span class="nv">import</span> <span class="nv">mean</span>
 
-<span class="nf">from</span> <span class="n">ex_1_36</span> <span class="kr">import</span> <span class="nn">fixed_point</span>
+<span class="nv">from</span> <span class="nv">ex_1_36</span> <span class="nv">import</span> <span class="nv">fixed_point</span>
 </pre></div>
 
 </div>
@@ -2043,8 +2040,8 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="nf">x</span> <span class="ow">=</span> <span class="n">fixed_point</span><span class="p">(</span><span class="n">lambda</span> <span class="n">x</span><span class="kt">:</span> <span class="n">log2</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">log2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">)</span> 
-<span class="nf">x</span>
+<div class=" highlight hl-scheme"><pre><span class="nv">x</span> <span class="nv">=</span> <span class="nv">fixed_point</span><span class="p">(</span><span class="k">lambda </span><span class="nv">x:</span> <span class="nv">log2</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="nv">/</span> <span class="nv">log2</span><span class="p">(</span><span class="nf">x</span><span class="p">)</span><span class="o">,</span> <span class="mf">2.0</span><span class="p">)</span> 
+<span class="nv">x</span>
 </pre></div>
 
 </div>
@@ -2104,8 +2101,8 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="nf">x2</span> <span class="ow">=</span> <span class="n">fixed_point</span><span class="p">(</span><span class="n">lambda</span> <span class="n">x</span><span class="kt">:</span> <span class="n">mean</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">log2</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">log2</span><span class="p">(</span><span class="n">x</span><span class="p">)]),</span> <span class="mf">2.0</span><span class="p">)</span>
-<span class="nf">x2</span>
+<div class=" highlight hl-scheme"><pre><span class="nv">x2</span> <span class="nv">=</span> <span class="nv">fixed_point</span><span class="p">(</span><span class="k">lambda </span><span class="nv">x:</span> <span class="nv">mean</span><span class="p">([</span><span class="nv">x,</span> <span class="nv">log2</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="nv">/</span> <span class="nv">log2</span><span class="p">(</span><span class="nf">x</span><span class="p">)])</span><span class="o">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="nv">x2</span>
 </pre></div>
 
 </div>
@@ -2158,8 +2155,8 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;ex-1-37.scm&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">load</span> <span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nb">load </span><span class="s">&quot;ex-1-37.scm&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">load </span><span class="s">&quot;lib/basic/operations.scm&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2172,11 +2169,11 @@ k번째 연산에 불필요한 수 p를 곱할 경우 이미 $\pi$에 근접한 
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="p">(</span><span class="n">find</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">when</span><span class="o">-</span><span class="n">satisfy</span><span class="o">-</span><span class="n">tolerance</span>
- <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">(</span><span class="n">cont</span><span class="o">-</span><span class="n">frac</span><span class="o">-</span><span class="n">iter</span> <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span>
- <span class="p">(</span><span class="n">lambda</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span>
- <span class="n">k</span><span class="p">))</span>
- <span class="p">(</span><span class="o">/</span> <span class="mi">1</span> <span class="mf">1.6180327868852458</span><span class="p">)</span> <span class="mf">0.0001</span> <span class="mi">1</span> <span class="n">inc</span><span class="p">)</span>
+<div class=" highlight hl-scheme"><pre><span class="p">(</span><span class="nf">find-n-when-satisfy-tolerance</span>
+ <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">k</span><span class="p">)</span> <span class="p">(</span><span class="nf">cont-frac-iter</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span>
+ <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span>
+ <span class="nv">k</span><span class="p">))</span>
+ <span class="p">(</span><span class="nb">/ </span><span class="mi">1</span> <span class="mf">1.6180327868852458</span><span class="p">)</span> <span class="mf">0.0001</span> <span class="mi">1</span> <span class="nv">inc</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2261,7 +2258,7 @@ function들입니다. ( 연습문제에서 구현한 것과 기능적으로 같�
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-haskell"><pre><span class="nf">map</span> <span class="p">(</span><span class="n">negate</span> <span class="o">.</span> <span class="n">sum</span> <span class="o">.</span> <span class="n">tail</span><span class="p">)</span> <span class="p">[[</span><span class="mi">1</span><span class="o">..</span><span class="mi">5</span><span class="p">],[</span><span class="mi">3</span><span class="o">..</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="o">..</span><span class="mi">7</span><span class="p">]]</span>
+<div class=" highlight hl-scheme"><pre><span class="nv">map</span> <span class="p">(</span><span class="nf">negate</span> <span class="o">.</span> <span class="nv">sum</span> <span class="o">.</span> <span class="nv">tail</span><span class="p">)</span> <span class="p">[[</span><span class="mi">1</span><span class="o">..</span><span class="mi">5</span><span class="p">]</span><span class="o">,</span><span class="p">[</span><span class="mi">3</span><span class="o">..</span><span class="mi">6</span><span class="p">]</span><span class="o">,</span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">7</span><span class="p">]]</span>
 </pre></div>
 
 </div>
