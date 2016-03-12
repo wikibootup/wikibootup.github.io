@@ -1129,9 +1129,10 @@ Fib(n-1) + Fib(n-2) & \mbox{otherwise } \end{cases} $</p>
 </ul>
 <ul>
 <li>$Fib(n) = \frac{(\phi^n - \psi^n)}{\sqrt 5} = \frac{(\phi^{n-1} - \psi^{n-1})}{\sqrt 5} + \frac{(\phi^{n-2} - \psi^{n-2})}{\sqrt 5}$<br>
-여기서, $\phi = \frac{1+\sqrt 5}{2}, \psi = \frac{1-\sqrt 5}{2}$로 정의되고, 이것은 $\phi^2 + \phi + 1 = 0$의 해이기도 하므로</li>
+여기서, $\phi = \frac{1+\sqrt 5}{2}, \psi = \frac{1-\sqrt 5}{2}$로 정의되고, 이 둘은 각각 황금비와 그 역inverse이므로<br>
+$\phi^n = \phi^{n-1} + \phi^{n-2}$이 성립합니다. -&gt; <a href="https://en.wikipedia.org/wiki/Golden_ratio#Other_properties">Golden_ratio</a> 참조</li>
 </ul>
-<h3 id="$\frac{(\phi^{n-1}-+-\phi^{n-2})---(\psi^{n-1}-+-\psi^{n-2})}{\sqrt-5}-=-\frac{(\phi-+-1)\phi^{n-2}---(\psi-+-1)\psi^{n-2}}{\sqrt-5}-=-\frac{(\phi^n---\psi^n)}{\sqrt-5}-=-Fib(n)$">$\frac{(\phi^{n-1} + \phi^{n-2}) - (\psi^{n-1} + \psi^{n-2})}{\sqrt 5} = \frac{(\phi + 1)\phi^{n-2} - (\psi + 1)\psi^{n-2}}{\sqrt 5} = \frac{(\phi^n - \psi^n)}{\sqrt 5} = Fib(n)$<a class="anchor-link" href="#$\frac{(\phi^{n-1}-+-\phi^{n-2})---(\psi^{n-1}-+-\psi^{n-2})}{\sqrt-5}-=-\frac{(\phi-+-1)\phi^{n-2}---(\psi-+-1)\psi^{n-2}}{\sqrt-5}-=-\frac{(\phi^n---\psi^n)}{\sqrt-5}-=-Fib(n)$">&#182;</a></h3><p><a href="http://www.enigmaticape.com/blog/sicp-exercise-1-13">Reference</a></p>
+<h3 id="$\frac{(\phi^{n-1}-+-\phi^{n-2})---(\psi^{n-1}-+-\psi^{n-2})}{\sqrt-5}-=-\frac{(\phi^n---\psi^n)}{\sqrt-5}-=-Fib(n)$">$\frac{(\phi^{n-1} + \phi^{n-2}) - (\psi^{n-1} + \psi^{n-2})}{\sqrt 5} = \frac{(\phi^n - \psi^n)}{\sqrt 5} = Fib(n)$<a class="anchor-link" href="#$\frac{(\phi^{n-1}-+-\phi^{n-2})---(\psi^{n-1}-+-\psi^{n-2})}{\sqrt-5}-=-\frac{(\phi^n---\psi^n)}{\sqrt-5}-=-Fib(n)$">&#182;</a></h3><p><a href="http://www.enigmaticape.com/blog/sicp-exercise-1-13">Reference : enigmaticape.com</a></p>
 
 </div>
 </div>
