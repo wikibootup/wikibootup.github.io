@@ -1,3 +1,4 @@
 author = "wikibootup"
 title = "wikibootup's code review"
 baseURL = "https://wikibootup.github.io/"
+theme = "lanyon-hugo"
