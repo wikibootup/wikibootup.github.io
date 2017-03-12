@@ -1,4 +1,9 @@
-author = "wikibootup"
-title = "wikibootup's code review"
 baseURL = "https://wikibootup.github.io/"
 theme = "lanyon-hugo"
+languageCode = "ko"
+
+[params]
+format = "123"
+author = "wikibootup"
+dateform = "Jan 2, 2006"
+title = "wikibootup's code review"
