@@ -7,3 +7,5 @@ format = "123"
 author = "wikibootup"
 dateform = "Jan 2, 2006"
 title = "wikibootup's code review"
+PygmentsStyle = "pastie"
+PygmentsCodeFences = true
