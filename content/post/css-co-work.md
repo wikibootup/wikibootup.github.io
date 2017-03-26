@@ -218,11 +218,11 @@ h1 {};
 h2 {};
 
 // Layout
-// 1) major component
+// 1) Major component
 .l-header {};
 .l-nav {};
 .l-footer {};
-// 2) minor component
+// 2) Minor component
 .l-grid {
   margin: @;
   padding: @;
@@ -231,18 +231,18 @@ h2 {};
   display: inline-block;
 }
 
-// module
-// btn's main module
+// Module
+// Main module
 .btn {};
-// btn's sub module
+// Sub module
 .btn-default {};
 .btn-small {};
 
-// state
+// State
 .btn-is-hidden {};
-.btn-is-disabled {};    
+.btn-is-disabled {};
 
-// theme
+// Theme
 .theme-border {};
 .theme-background {};
 
@@ -250,12 +250,12 @@ h2 {};
 
 html (위의 css와는 별개)
 ```html
-<body> //Base
+<body> <!--Base-->
 ...
 
-<div class="nav nav-default"> //Layout
-  <div class="toolbar"> //Layout
-    <button class="btn btn-default">// Module, State(brother level selectors)
+<div class="nav nav-default"> <!--Layout-->
+  <div class="toolbar"> <!--Layout-->
+    <button class="btn btn-default"><!-- Module, State(brother level selectors)-->
       Default</button>
     <button class="btn btn-default">Default</button>
 ...
