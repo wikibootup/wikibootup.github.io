@@ -45,7 +45,7 @@ Contents
 - [CSS 라이브러리와 결합integration하기](#css-라이브러리와-결합integration하기)
 - [SMACSS와 BEM의 범주 대응](#smacss와-bem의-범주-대응)
 - [보충](#보충)
-- [부가적-이슈](#부가적-이슈)
+- [부가적 이슈](#부가적-이슈)
 - [맺음말Epilogue](#맺음말epilogue)
 - [용어 정리](#용어-정리)
 - [References](#references)
