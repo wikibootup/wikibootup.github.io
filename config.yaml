@@ -1,0 +1,12 @@
+---
+baseURL: "http://wikibootup.org"
+theme: "lanyon-hugo"
+footnotereturnlinkcontents: "↩"
+languageCode: "ko"
+
+params:
+  Author: "wikibootup"
+  DateForm: "Jan 2, 2006"
+  Title: "wikibootup's code review"
+  PygmentsStyle: "pastie"
+  PygmentsCodeFences: true
