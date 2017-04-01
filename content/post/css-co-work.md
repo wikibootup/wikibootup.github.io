@@ -30,6 +30,27 @@ tags = ["frontend", "design", "css"]
 
 이에 대한 답은 당연히 뷰를 잘 작성하는 것이다. 하지만 어떻게 그것이 가능할 것인지를 생각해보아야 한다. 지금이 바로 일관된 방법, 체계적인 방법들이 있었으면 좋겠다고 생각하게 되는 순간이다.
 
+***
+
+Contents
+===
+- [배경](#배경)
+- [CSS 방법론](#css-방법론)
+  - [OOCSS](#oocss)
+      - [OOCSS 응용](#oocss-응용)
+  - [SMACSS](#smacss)
+      - [SMACSS 응용](#smacss-응용)
+  - [BEM](#bem)
+      - [BEM 응용](#bem-응용)
+- [CSS 라이브러리와 결합integration하기](#css-라이브러리와-결합integration하기)
+- [SMACSS와 BEM의 범주 대응](#smacss와-bem의-범주-대응)
+- [보충](#보충)
+- [부가적-이슈](#부가적-이슈)
+- [맺음말Epilogue](#맺음말epilogue)
+- [용어 정리](#용어-정리)
+- [References](#references)
+
+***
 
 CSS 방법론
 ===
@@ -60,7 +81,9 @@ oocss는 스타일의 특징(feature)에 따라 범주를 분리하여 구조적
 
 ***
 
-**응용 : `컨테이너(container)와 내용물(content)은 분리되어야 한다`**
+### OOCSS 응용
+
+**1. `컨테이너(container)와 내용물(content)은 분리되어야 한다`**
 
 **Not OOCSS style**
 
@@ -100,7 +123,7 @@ the content-title style has also not a coupling with span tag.
 
 ***
 
-**응용 : `구조(structure)와 표면(skin)은 분리되어야 한다`**
+**2. `구조(structure)와 표면(skin)은 분리되어야 한다`**
 
 **Not OOCSS style**
 
@@ -199,7 +222,9 @@ SMACSS의 핵심은 범주화(categorization)이다. 범주화를 통한 패턴�
 
 ***
 
-**응용: `디렉토리 구조`**
+### SMACSS 응용
+
+**1. `디렉토리 구조`**
 ```
 ./app.scss
 ./_base.scss
@@ -215,7 +240,7 @@ SMACSS의 핵심은 범주화(categorization)이다. 범주화를 통한 패턴�
 
 ***
 
-**응용: `범주 별 스타일`**
+**2. `범주 별 스타일`**
 
 css
 ```css
@@ -292,7 +317,9 @@ BEM은 선택자에 대해 크게 세가지를 권고한다. 첫 째, selector�
 
 ***
 
-**응용: `컴포넌트 스타일의 예`**
+### BEM 응용
+
+**1. `컴포넌트 스타일의 예`**
 
 css
 ```css
@@ -340,7 +367,7 @@ html
   ...
 ```
 
-CSS 라이브러리와 결합(integration)하기
+CSS 라이브러리와 결합integration하기
 ===
 만약, 위의 방법론들을 실제로 적용하기 시작했다면 아마 나처럼 얼마 안가 '헉' 소리가 나올 수 있을 것이다. 아마 그 소리에는 방법론을 적용하기에는 현실적으로 준비가 되지 않았다는 당혹스러움이 담겨있을 것이라 생각한다. 그저 당연하게, 또는 손쉽게 사용해오던 '트위터 부트스트랩(twitter bootstrap)'을 이런 방법론과 어떻게 조화할 수 있단 말인가?
 
@@ -410,8 +437,7 @@ SMACSS와 BEM의 범주 대응
 
 ***
 
-**용어 정리**  
-
+### 용어 정리
 
 뷰          : web view  
 요소        : html element  
@@ -422,7 +448,7 @@ SMACSS와 BEM의 범주 대응
 
 ***
 
-**References**
+### References
 
 http://teachingkidsprogramming.org/ - 메뉴얼 그대로 만든 듯한 Classic BEM  
 
