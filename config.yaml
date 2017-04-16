@@ -3,6 +3,7 @@ baseURL: "http://wikibootup.org"
 theme: "lanyon-hugo"
 footnotereturnlinkcontents: "↩"
 languageCode: "ko"
+canonifyURLs: true
 
 params:
   Author: "wikibootup"
