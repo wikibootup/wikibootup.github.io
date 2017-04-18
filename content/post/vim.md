@@ -3,7 +3,7 @@ draft = false
 categories = []
 tags = ["environment"]
 date = "2017-04-15T18:41:58+09:00"
-title = "Vim"
+title = "Vim과 Vim이 아닌 것"
 
 +++
 
