@@ -289,6 +289,13 @@ Neovim 환경에서는 비동기 방식의 프로세스를 이용한 플러그�
 
 그리고 사소하지만 Neovim에서는 굳이 에디터의 모든 창을 닫고 터미널로 빠져나가지 않아도 Vim 내부에서 터미널을 열어 작업을 할 수가 있다. 덕분에 편집 과정에서 작업 흐름을 유지할 수 있게 되었다. 아직 사용해 본 적이 없다면 `:terminal`을 입력해보자.
 
+만약 자주 사용한다면 아래처럼 창 상단의 일부를 분할하여 터미널로 만들어 쓸 수도 있다.
+
+```vim
+"New terminal in the top of the active pane
+nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
+```
+
 첫화면
 ===
 나는 Vim 에디터를 켰을 때 첫화면에 대해서 다음과 같은 기능을 자동으로 실행하도록 구현하였다.
@@ -369,6 +376,6 @@ Epilogue
 
 [^7]: Nyaovim은 NeoVim을 기본 전제로 구현되어 있다.
 
-[^8]: [Tagbar](https://github.com/majutsushi/tagbar)는 ctags를 기반으로 하여 코드로부터 클래스, 함수, 변수를 항목(categories)으로 만들어 창에 표시한다. 추가적인 파일 생성 없이 태그를 동적으로 만드므로 깔끔하다. 다만 자바스크립트 작업을 위해서 공식 문서에서 추천하는 jsctags를 이용해 본 결과 부실하다는 결론을 내리고, [Tagbar js](https://github.com/hushicai/tagbar-javascript.vim)가 사용하던 `esctags`를 이용하여 해결하였다.
+[^8]: [Tagbar](https://github.com/majutsushi/tagbar)는 ctags를 기반으로 하여 코드로부터 클래스, 함수, 변수를 항목(categories)으로 만들어 창에 표시한다. 추가적인 파일 생성 없이 태그를 동적으로 만드므로 깔끔하다. 다만 자바스크립트 작업을 위해서 공식 문서에서 추천하는 jsctags를 이용해 본 결과 부실하다는 것을 확인하였다. 하지만 이를 개선하기 위한 설정들을 추가하였을 때 속도의 이슈가 발생하여 추가 작업 없이 사용하고 있다 (텍스트가 많은 JS 파일의 경우).
 
 [^9]: 이 기능을 포함하여 다른 좋은 기능들을 위해서는 Vim의 버전이 충분히 높아야 한다.
