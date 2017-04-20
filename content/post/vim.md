@@ -161,7 +161,7 @@ html:5 > div.col-xs-12*5 > div.something
 
 보다시피 가벼운 테스트나 반복적인 블록 사용 시에 특히 유용한 도구이다.
 
-이런 자동 수정 외에 커서를 여러 라인에 만들 수 있게 하는 [Vim multiple cursor](https://github.com/terryma/vim-multiple-cursors)와 같은 플러그인을 이용하면 Sublime text의 전유물인 줄로만 알았던 기능도 구사할 수 있다. 특히 Multiple cursor 모드에서 Visual block이나 `<S-#>`[^6] 등의 Vim 고유 기능을 접목하면 매우 유용한 도구가 된다.
+이런 자동 수정 외에 커서를 여러 라인에 만들 수 있게 하는 [Vim multiple cursor](https://github.com/terryma/vim-multiple-cursors)와 같은 플러그인을 이용하면 Sublime text의 전유물인 줄로만 알았던 기능도 구사할 수 있다. 특히 Multiple cursor 모드에서 Visual block이나 `<S-#>` 등의 Vim 고유 기능을 접목하면 매우 유용한 도구가 된다.[^6]
 
 이처럼 유용한 기능을 쉽게 사용 가능한 플러그인들도 있지만, 비교적 설정이 어려운 것들도 있다. 위에서 언급했던 자동완성(Auto Completion)과 문법 검사(Linting) 기능이다. 현재 자동완성은 [Deoplete](https://github.com/Shougo/deoplete.nvim)을 이용하고 있다. 처음 환경설정을 하는 과정에서 이것이 자동완성을 위해 사용해야 하는 기본 Python 설정 경로가 제대로 적용이 안되었던 지라 계속 애를 먹었다. 빠른 작업을 위해서 반드시 이 기능이 필요했기 때문에 삽질을 한 끝에 시스템 파이썬 경로를 지정한 뒤에야 문제가 해결되었다. 아래처럼 길고 하드코딩된 경로가 나라고 좋을리 없겠지만 가능한 시간 범위에서 해결 방법을 찾기 어렵다고 판단하여 보류중이다.
 
@@ -179,7 +179,6 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 ```
 
 * 위의 코드는 플러그인 매니저 가운데 [Vim-plug](https://github.com/junegunn/vim-plug)를 이용한 형태이다. 이것은 비동기적 플러그 작업(설치, 수정, 삭제 등) 뿐 아니라 위처럼 `npm install`과 같은 후처리 작업을 하는 데에 있어서도 좋다.
-
 
 사소한 버그들은 임시방편으로 대체한 상태이다. 예를 들면, html 자동 완성은 [html5.vim](https://github.com/othree/html5.vim)과 충돌을 일으키기도 하고, 자동완성 개수 제한 등의 제약을 무시해 버려서 명시적으로 해제한 상태이다. 그럼에도 자동완성은 잘 된다. 아마 `omnicomplete`이 어딘가에 적용되어 있는게 아닐까 싶다. 모든 것을 이해하기에는 아직 턱없이 부족하다.
 
@@ -378,7 +377,7 @@ Epilogue
 
 [^5]: Zsh을 이용한 자동완성 기능을 이용한다고 가정할 때 매우 편리하다.
 
-[^6]: Word(at cursor) search & highlight
+[^6]: `<S-#>`은 Word(at cursor) search & highlight 기능이다. 만약 Multiple cursor 기능 없이 단어를 검색하며 특정 동작을 반복하고 싶다면 1) `/` 키워드로 해당 단어를 `/단어이름`과 같이 입력하여 찾은 뒤 2) 특정 행동을 수행하고, 3) `n`을 입력하여 다음 단어로 이동한 뒤 `.`을 입력하여 이전 행동을 수행하는 작업을 반복해야 한다 (즉, `3)`의 반복). 나는 이전 행동을 반복하는 `.` 명령어를 매우 단순하고 유용함에도 최근에 알게 되었다.
 
 [^7]: Nyaovim은 NeoVim을 기본 전제로 구현되어 있다.
 
