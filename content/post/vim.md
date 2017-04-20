@@ -302,7 +302,7 @@ nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
 
 1. Nerdtree 좌측
 2. MRU 하단
-3. Tagbar[^8] 우측
+3. Side Pane 우측
 4. 커서는 중앙(편집할 파일이 불려올 창)
 
 창이 분할되는 특성상 키를 입력하는 순서가 중요하다.
@@ -311,7 +311,7 @@ nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
 "VimEnter configurations ------------------------------------------------------
 "NOTE: Order is important in this block.
 
-augroup MRU
+augroup MRUOpen
   autocmd!
   autocmd VimEnter * MRU
 augroup END
@@ -324,12 +324,18 @@ augroup NERDTreeOpen
   autocmd VimEnter * wincmd l
 augroup END
 
-autocmd VimEnter * nested :TagbarOpen
+"Make a new 'Vertical New Pane Side' & back to the main pane
+augroup SideRightOpen
+  au!
+  autocmd VimEnter * :vnew
+  autocmd VimEnter * :vertical resize 40
+  autocmd VimEnter * :wincmd h
+augroup END
 
 "END VimEnter configuration ---------------------------------------------------
 ```
 
-이 소단락을 포함하여 위에서 설명한 설정들을 마치면 아래와 같은 모습이 된다.
+이 소단락을 포함하여 위에서 설명한 설정들을 마치면 아래와 같은 모습이 된다[^8].
 
 ![](/img/vim-edit-screen.png)
 
@@ -376,6 +382,6 @@ Epilogue
 
 [^7]: Nyaovim은 NeoVim을 기본 전제로 구현되어 있다.
 
-[^8]: [Tagbar](https://github.com/majutsushi/tagbar)는 ctags를 기반으로 하여 코드로부터 클래스, 함수, 변수를 항목(categories)으로 만들어 창에 표시한다. 추가적인 파일 생성 없이 태그를 동적으로 만드므로 깔끔하다. 다만 자바스크립트 작업을 위해서 공식 문서에서 추천하는 jsctags를 이용해 본 결과 부실하다는 것을 확인하였다. 하지만 이를 개선하기 위한 설정들을 추가하였을 때 속도의 이슈가 발생하여 추가 작업 없이 사용하고 있다 (텍스트가 많은 JS 파일의 경우).
+[^8]: 이전에는 텍스트에 집중하던 시선이 화면 중앙을 벗어나 개방된 오른쪽으로 빠져 나가는 경험을 종종 했다. 그래서 이것은 가독성이 떨어지는 경험을 개선하고자 취한 조치였다. 물론 여분의 창을 미리 열어두어 나중에 다른 파일을 열기위한 목적도 있기는 하였다. 하지만 그래도 본 목적은 가독성에 있었다. 또한 이전에는 우측창 대신 [Tagbar](https://github.com/majutsushi/tagbar)가 그 자리에 위치하여 있었다. 이것은 ctags를 기반으로 하여 코드로부터 클래스, 함수, 변수를 항목(categories)으로 만들어 창에 표시하는 플러그인인데, 추가적인 파일 생성 없이 태그를 동적으로 만드므로 깔끔하고 볼만했다. 다만 아쉽게도 텍스트의 양이 많은 파일을 분석하는 경우 속도 이슈가 발생하여, Vim을 켤 때 자동으로 실행하는 대신 수동으로 실행하도록 변경하였다.
 
 [^9]: 이 기능을 포함하여 다른 좋은 기능들을 위해서는 Vim의 버전이 충분히 높아야 한다.
