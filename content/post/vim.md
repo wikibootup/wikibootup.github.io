@@ -140,7 +140,7 @@ syn sync minlines=50 maxlines=50
 - 거의 언제나 그렇듯 [더 좋은 문서](http://vim.wikia.com/wiki/All_the_right_moves)가 있으니 참고하자.
 - 메뉴얼에는 대문자로 되어있는 명령어들이라도 만약, 해당 문자에 대해서 소문자 구현이 없다면, 소문자로도 동일한 명령을 할 수 있다. 위의 요약설명에서 원래는 대문자인데 굳이 소문자로 나타낸 명령어들은 그런 이유에서 대문자로 바꾸지 않았다.
 
-이처럼 사소하지만 유용한 명령어들이 많다. 만일 위에서 설명한 검색 및 점프 방법보다 더 자유자재로 움직이고 싶다면 [vim-easymotion](https://github.com/easymotion/vim-easymotion)이나 [vim-sneak](https://github.com/justinmk/vim-sneak)와 같은 플러그인들을 적용해볼 수 있다. 하지만 나는 위의 플러그인들을 사용해본 결과 필요한 수준의 실용성을 발견하지는 못해서 이 부분에 있어서는 Vim이 제공하는 기본 기능만 사용하고 있다.
+이처럼 사소하지만 유용한 명령어들이 많다. 만일 위에서 설명한 검색 및 점프 방법보다 더 자유자재로 움직이고 싶다면 자신만의 방법(?)을 구현하거나 [vim-easymotion](https://github.com/easymotion/vim-easymotion)이나 [vim-sneak](https://github.com/justinmk/vim-sneak)와 같은 플러그인들을 적용해볼 수 있을 것이다.
 
 Colorscheme
 ===
