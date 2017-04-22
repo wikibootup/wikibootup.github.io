@@ -26,10 +26,10 @@ Contents
 - [두 손은 키보드에](#두-손은-키보드에)
   - [Normal mode 기준](#normal-mode-기준)
   - [Visual mode 기준](#visual-mode-기준)
-  - [Command mode 기준](#command-mode-기준)
+  - [Command line mode 기준](#command-line-mode-기준)
 - [Colorscheme](#colorscheme)
 - [File Navigator](#file-navigator)
-- [Search](search)
+- [Search](#search)
 - [Edit Helpers](#edit-helpers)
 - [의존성을 가진 플러그인](#의존성을-가진-플러그인)
 - [단축키 설정](#단축키-설정)
@@ -79,6 +79,7 @@ syn sync minlines=50 maxlines=50
 두 손은 키보드에
 ===
 최근에는 또 다른 Vim 애호가 분을 알게 되었다. '**두 손은 키보드에**', 이 말은 그 분께서 해주신 조언이었다. 그 말을 듣고 보니 내가 두 손을 키보드에서 자주 떼고 있다는 사실을 알게 되었다. 즉, 작업 중에 마우스에 손이 가는 일이 생각보다 많았다. 앞서 [배경](#배경)에서 나는 '편집모드'가 유용하다고 언급한 바 있다. 이 유용함 덕분에 두 손을 키보드에서 떼지 않고도 할 수 있는 일들이 많은 것이었는데, 깨닫지 못하고 있다가  반성을 하는 계기가 되었다. 이 소주제에서는 그 편집모드를 유용하게 사용할 수 있는 사소하지만 유용한 잔재주들에 대해서 요약된 리스트 형태로 소개하고자 한다.
+
 ***
 
 ### Normal mode 기준
@@ -121,9 +122,9 @@ syn sync minlines=50 maxlines=50
          - 예를 들면 `<div>`**이 부분에 해당하는 내용**`</div>`이 블록됨
     - 비슷한 원리로 `{}, <>, (), '', ""` 등에 응용 가능
 
-### Command mode 기준
+### Command line mode 기준
 
-사실 모드가 하나 더 있다. [cmdline](http://vimdoc.sourceforge.net/htmldoc/cmdline.html)이라 불리는 커맨드 모드이다. 이걸 공식적으로 '모드'라고 부르는지는 모르겠으나, 의외로 잘 안 알려진 듯한 몇가지만 소개하겠다.
+사실 모드가 하나 더 있다. [cmdline](http://vimdoc.sourceforge.net/htmldoc/cmdline.html)이라 불리는 커맨드라인 모드이다. 여기서는 의외로 잘 안 알려진 듯한 몇가지만 소개하겠다.
 
 - 단어 검색
   - 대소문자에 무관한 검색은
@@ -134,6 +135,18 @@ syn sync minlines=50 maxlines=50
   - 선택적 단어 수정 시 `:%s/<>/<>/c`
       - c는 'confirm'의 약자
   - 선택적으로 대소문자 무관한 모든 단어 수정 시 `:%s/<>/<>/gci`
+
+부가적으로 커맨드라인 모드에서는 대소문자가 약간 신경이 쓰이는 문제이다. 이에 대해서는 몇 번만 단어를 검색하고 수정(replace)하고 자동완성을 해보아도 알 수 있는데, 예를 들면 찾을 때는 대소문자를 구분하고 싶지만 자동완성은 구분하지 않기를 원하는 경우가 있을 수 있다. 이를 해결하기 위해서는 몇가지 설정을 함께 해주어야 한다. 그 내용이 간단하므로 코드로 대신하겠다.
+
+```vim
+"Case insensitve in cmdline
+"NOTE: Must be set for other insensitve configurations
+set ignorecase
+"Case sensitive when search & replace
+set smartcase
+"Case insensitive when cmdline tab autocompletion
+set infercase
+```
 
 ***
 
