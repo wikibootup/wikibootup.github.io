@@ -121,6 +121,9 @@ syn sync minlines=50 maxlines=50
       - `vit`는 두 태그 사이에 텍스트만 블록
          - 예를 들면 `<div>`**이 부분에 해당하는 내용**`</div>`이 블록됨
     - 비슷한 원리로 `{}, <>, (), '', ""` 등에 응용 가능
+    - 사실 이건 Visual mode 뿐 아니라 다른 곳에도 적용 가능
+      - Yank:  `yaw`, `yiw`
+      - Cut(delete):  `daw`, `diw`
 
 ### Command line mode 기준
 
