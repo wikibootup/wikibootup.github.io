@@ -160,7 +160,9 @@ set infercase
 
 Colorscheme
 ===
-배경화면(Colorscheme)은 매우 중요하다. 배경화면이 단순히 보이는 모습이 아니라 Syntax highlighting도 결정해서 각 언어(c,js,py,go,html,css,...)들과 수많은 플러그인들의 효과와 어울려야 하기 때문이다. 단순히 어울리는 것 이상의 문제가 발생할 수 있는데, 예를 들면 텍스트가 너무 밝거나 어두워서 안보이는 경우이다. 배경화면과 관련해서는 [Dracula](https://draculatheme.com/vim/), [Molokai](https://github.com/tomasr/molokai), [Seoul256](https://github.com/junegunn/seoul256.vim) 등 수많은 테마가 있다. 위에 제시한 테마들은 개인적으로 다 좋았지만 사람들(특히 Vim에 익숙치 않은)과의 협업 중에 그들이 [Solarized](https://github.com/altercation/vim-colors-solarized) 테마일 때 가장 편하게 보는 것을 많이 경험한 뒤로는 계속 Solarized 테마를 유지하고 있다. Iterm과의 호환을 언급하면, Iterm에서 배경화면을 설정했어도 Vim에서는 따로 배경화면을 명시적으로 지정하는게 좋다. 왜냐하면 위에서 말한 Syntax highlighting의 문제 때문이다.
+배경화면(Colorscheme)은 매우 중요하다. 배경화면이 단순히 보이는 모습이 아니라 Syntax highlighting도 결정해서 각 언어(c,js,py,go,html,css,...)들과 수많은 플러그인들의 효과와 어울려야 하기 때문이다. 단순히 어울리는 것 이상의 문제가 발생할 수 있는데, 예를 들면 텍스트가 너무 밝거나 어두워서 안보이는 경우이다. 배경화면과 관련해서는 [Dracula](https://draculatheme.com/vim/), [Molokai](https://github.com/tomasr/molokai), [Seoul256](https://github.com/junegunn/seoul256.vim) 등 수많은 테마가 있다. 개인적으로 가장 눈에 편한 Colorscheme은 [Solarized](https://github.com/altercation/vim-colors-solarized)이어서 오래 사용했지만 현재는 텍스트 간 대비(판독성)가 더 중요하다고 판단하여 vim에는 [monokai](https://github.com/sickill/vim-monokai), iterm에는 [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)이 제공하는 monokai-soda를 적용한 상태이다.
+
+Iterm과의 호환을 언급하면, Iterm에서 배경화면을 설정했어도 Vim에서는 따로 배경화면을 명시적으로 지정하는게 좋다. 왜냐하면 위에서 말한 Syntax highlighting의 문제 때문이다.
 
 만약, 사용하는 테마가 16 color 이상을 지원한다면 그것을 선택하자. 더 효과적인 시각 효과(특히 Syntax highlighting)를 경험할 수 있다. 예를 들어, Solarized를 사용한다면 256 color를 설정해보자.
 
