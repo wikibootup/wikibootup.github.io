@@ -324,6 +324,45 @@ OOCSS에서 나오는 말이 있다. '구조structure와 표면skin을 분리하
 </div>
 ```
 
+## Item group과 pseudo class
+`item-box`와는 또 다르게 item들을 여러개 묶어서 표현해야할 때가 있다. 예를 들어, 토글버튼은 2개의 버튼이 묶인 형태인데 이럴 경우 `btn-group`을 만들어 사용할 수 있다. 이러한 item-group에는 종종 `first-child`, `last-child` 등의 pseudo class를 사용해야 한다. 아래는 부트스트랩이 `btn-group`에 어떻게 pseudo class를 사용했는지를 보여준다.
+
+```css
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: -1px;
+  }
+}
+...
+```
+
+해석하면 오른쪽에 있는 버튼은 왼쪽에 1px만큼 이동해서 겹쳐진다는 뜻이다.
+
+이와 비슷하게 ul 태그에 붙이는 `list-group` 선택 같은 경우 li 태그에 대하여 마지막 li 태그를 제외하고 border-bottom을 주고싶을 수가 있다. 그 경우 아래와 같이 줄 수가 있다.
+
+```css
+.list-group {
+  .list-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid black;
+    }
+  }
+}
+```
+
+```html
+<ul class="list-group">
+  <li class="list-item">no border-bottom</li>
+  <li class="list-item">yes border-bottom</li>
+  <li class="list-item">no border-bottom</li>
+</ul>
+```
+
+참고로 pseudo class는 concatenate이 가능하다. `&:not(:first-child):not(:last-child)`와 같이 첫번째와 마지막에 위치한 선택자가 아닌 조건을 만들어 필터링할 수 있다.
+
 ## Built-in function
 
 `darken`, `lighten`과 같은 내장된 함수를 사용하면 쉽게 UI 요소의 느낌을 바꿀 수 있다. 부트스트랩이 버튼 UI에 대해 이미 사용하고 있는 방식인데, 예를 들면 `btn:hover`일 때에는 `darken`을 10%정도 줘서 그만큼 더 어둡게 만드는 식이다. 이게 번거로운 반복 작업을 일괄적으로 하게 만드는 장점이 있는데, 이게 곧 테마에 따라 UI의 느낌을 다르게 줄 때에도 시간을 많이 아껴줄 것 같다.
