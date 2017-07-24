@@ -418,6 +418,38 @@ augroup END
 
 ![](/img/vim-edit-screen.png)
 
+아니면 이런 스타일도 있다.
+
+```vim
+"VimEnter configurations ------------------------------------------------------
+"NOTE: Order is important in this block.
+
+augroup MRUOpen
+  autocmd!
+  autocmd VimEnter * MRU
+  autocmd VimEnter * :wincmd k
+augroup END
+
+ augroup NERDTreeOpen
+   autocmd!
+   "NERDTree
+   autocmd VimEnter * NERDTree
+   "To focus edit pane after NERDTree open
+   autocmd VimEnter * wincmd l
+ augroup END
+
+ "Make a new 'Vertical New Pane Side' & back to the main pane
+ augroup SideRightOpen
+   au!
+   autocmd VimEnter * :vsp
+   autocmd VimEnter * wincmd h
+ augroup END
+
+"END VimEnter configuration ---------------------------------------------------
+```
+
+![](/img/vim-edit-screen-2.png)
+
 기타
 ===
 
