@@ -570,6 +570,57 @@ scss 파일 하나에는 여러개의 선택자들을 정의할 수 있다. 문�
 </div>
 ```
 
+## Style lint and Documentation
+프로젝트 설계 초반에 코드 스타일 가이드를 강제하지 않으면, 코드는 점점 무질서해진다. 이것은 'scss'에도 통하는 말일 것이다. 예를 들어, `sasslint` 같은 것을 도입하면 스타일 디렉토리 루트에 `.sass-lint.yaml`을 만들어 아래와 같은 설정을 해볼 수 있다.
+
+```
+rules:
+  property-sort-order:
+    - 0
+  class-name-format:
+    - 0
+  no-important:
+    - 0
+  no-empty-rulesets:
+    - 1
+  clean-import-paths:
+    - 1
+  single-line-per-selector:
+    - 1
+  nesting-depth:
+    - 1
+    - max-depth: 3
+  leading-zero:
+    - 0
+  ...
+```
+
+선택자 네이밍을 잘했더라도 문서화는 필요하다. 가장 간단한 문서화의 형태는 주석으로, 아래와 같이 섹션을 나누거나 선택자에 설정하는 경우가 있을 것이다.
+
+```css
+/////////////////////////////////////////////////////////////
+//  Component Group
+
+/// Main component group
+.component-group {}
+
+/// `Pepper` style for main component group
+/// @todo - Refactor it
+/// @example
+///   - <div class="component-group-pepper"></div>
+.component-group-pepper {}
+.component-group-salt {}
+
+/////////////////////////////////////////////////////////////
+//  Component
+
+.component-group {}
+.component-pepper {}
+.component-salt {}
+```
+
+선택자에 적용한 주석의 slash가 3개인 것은 [sassdoc](http://sassdoc.com/)을 위해서이다. Sassdoc을 이용하면 작성한 주석들을 토대로 보기 좋은 정적 UI를 만들어 주므로 유용하다.
+
 ## 숙제
 사소하지만 생각해보아야 할 이슈들 가운데 몇가지만 숙제 형식으로 남겨둔다. 프로젝트의 상황에 따라 해결책은 각기 다를 것이다.
 
