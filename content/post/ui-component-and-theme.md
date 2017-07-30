@@ -131,28 +131,32 @@ html은 짧게만 언급하려고 한다. div 태그 외에 보다 semantic한 �
 ```sh
 ui-component
 ├── partials
-│   ├── _base.scss
-│   ├── _common.scss
-│   ├── _layout.scss
-│   ├── _utils.scss
-│   ├── modules
-│   │   ├── _button-groups.scss
-│   │   ├── _buttons.scss
-│   │   ├── _chips.scss
-│   │   ├── _dropdowns.scss
-│   │   ├── _forms.scss
-│   │   ├── _glyphicons.scss
-│   │   ├── _lists.scss
-│   │   ├── _navbar.scss
-│   │   ├── _page-header.scss
-│   │   └── _tables.scss
-│   ├── themes
-│   │   ├── _my-theme.scss
-│   │   └── _utils.scss
-│   └── utils
-│       ├── _extends.scss
-│       ├── _functions.scss
-│       └── _mixins.scss
+│   ├── _base.scss
+│   ├── _common.scss
+│   ├── _layout.scss
+│   ├── _modules.scss
+│   ├── _themes.scss
+│   ├── _utils.scss
+│   ├── _variables.scss
+│   ├── modules
+│   │   ├── _buttons.scss
+│   │   ├── _chips.scss
+│   │   ├── _dividers.scss
+│   │   ├── _dropdowns.scss
+│   │   ├── _forms.scss
+│   │   ├── _glyphicons.scss
+│   │   ├── _lists.scss
+│   │   ├── _navbar.scss
+│   │   ├── _page-headers.scss
+│   │   ├── _panels.scss
+│   │   └── _tables.scss
+│   ├── themes
+│   │   ├── _default.scss
+│   │   └── _utils.scss
+│   └── utils
+│       ├── _extends.scss
+│       ├── _functions.scss
+│       └── _mixins.scss
 └── ui-component.scss
 ```
 
@@ -206,25 +210,22 @@ scss를 사용하면 mixin 뿐만 아니라 extend, function을 사용할 수 �
 ```
 
 ## 로딩구조
-위의 파일구조에서 각 파일들은 개념에 따라 묶어서 로딩이 되고, 그걸 더 큰 개념의 일부로 판단하여 로딩이 되는 구조이다. 예를 들어, `utils`라는 디렉토리에 있는 파일들은 그 디렉토리 바깥에 있는 `_utils.scss`에서 로딩하고, 이것은 `partials` 바깥에 있는 `ui-component.scss`에서 로딩할 수 있다.
+위의 파일구조에서 각 파일들은 개념에 따라 묶어서 로딩이 되고, 그걸 더 큰 개념의 일부로 판단하여 로딩이 되는 구조이다. 예를 들어, `utils`라는 디렉토리에 있는 파일들은 그 디렉토리 바깥에 있는 `_utils.scss`에서 로딩하고, 이것은 `partials` 바깥에 있는 `ui-component.scss`에서 로딩할 수 있다. 이렇게 하면, 개념이 늘어나거나 줄어들 때에 그저 디렉토리에 파일을 하나 추가하거나 삭제하면 되기 때문에 유용하다. 예를 들어, 테마의 개수가 수정이 되면 `_themes.scss`에서 해당 파일의 `@import`하는 부분을 '추가/삭제'하면 된다 된다.
 
 ```css
-// Utils for Theme
-@import './partials/themes/_utils';
 // Theme
-@import './partials/themes/_my-theme';
+@import './partials/_themes';
+// Variables
+@import './partials/_variables';
 // Utils
 @import './partials/_utils';
-// Base
+// Base & Common elements
 @import './partials/_base';
-// Misc
 @import './partials/_common';
 // Layout
 @import  './partials/_layout';
 // Modules
-@import './partials/modules/_navbar';
-@import './partials/modules/_icons';
-...
+@import './partials/_modules';
 ```
 
 이 때 로딩순서를 주의하자. 예를 들어, 여기서 테마 로딩은 유틸보다 앞서지만, 테마를 위한 유틸은 따로 있는 것이다. 이것이 의미하는 것은 유틸은 테마에서 지정된 값을 사용할 수 있다는 것이다 (종속성이 있을 수 있다는 의미).
@@ -365,7 +366,7 @@ OOCSS에서 나오는 말이 있다. '구조structure와 표면skin을 분리하
 ```
 
 ## Item group과 pseudo class
-`item-box`와는 또 다르게 item들을 여러개 묶어서 표현해야할 때가 있다. 예를 들어, 토글버튼은 2개의 버튼이 묶인 형태인데 이럴 경우 `btn-group`을 만들어 사용할 수 있다. 이러한 item-group에는 종종 `first-child`, `last-child` 등의 pseudo class를 사용해야 한다. 아래는 부트스트랩이 `btn-group`에 어떻게 pseudo class를 사용했는지를 보여준다.
+`item-box`와는 또 다르게 item들을 여러개 묶어서 표현해야할 때가 있다. 예를 들어, 토글버튼은 2개의 버튼이 묶인 형태인데 이럴 경우 `btn-group`을 만들어 사용할 수 있다.
 
 ```css
 .btn-group {
@@ -381,7 +382,7 @@ OOCSS에서 나오는 말이 있다. '구조structure와 표면skin을 분리하
 
 해석하면 오른쪽에 있는 버튼은 왼쪽에 1px만큼 이동해서 겹쳐진다는 뜻이다.
 
-이와 비슷하게 ul 태그에 붙이는 `list-group` 선택 같은 경우 li 태그에 대하여 마지막 li 태그를 제외하고 border-bottom을 주고싶을 수가 있다. 그 경우 아래와 같이 줄 수가 있다.
+이와 비슷하게 ul 태그에 붙이는 `list-group` 선택 같은 경우 li 태그에 대하여 마지막 li 태그를 제외하고 border-bottom을 주고싶을 수가 있다. 그 경우 pseudo class를 사용하여 아래와 같이 줄 수가 있다.
 
 ```css
 .list-group {
@@ -417,22 +418,25 @@ UI 컴포넌트 만으로 UI가 구현된다면 얼마나 좋을까? 하지만 �
 ```sh
 non-ui-component
 ├── partials
+│   ├── _common.scss
+│   ├── _layout.scss
 │   ├── _lib.scss
+│   ├── _themes.scss
 │   ├── _utils.scss
+│   ├── _variables.scss
 │   ├── _views.scss
 │   ├── themes
-│   │   └── _default.scss
+│   │   ├── _default.scss
+│   │   └── _utils.scss
 │   ├── utils
-│   │   ├── _functions.scss
 │   │   ├── _extends.scss
 │   │   ├── _mixins.scss
-│   │   ├── functions
-│   │   │   ├── _lib.scss
-│   │   │   └── _views.scss
 │   │   ├── extends
+│   │   │   ├── _common.scss
 │   │   │   ├── _lib.scss
 │   │   │   └── _views.scss
 │   │   └── mixins
+│   │       ├── _common.scss
 │   │       ├── _lib.scss
 │   │       └── _views.scss
 │   └── views
@@ -496,10 +500,82 @@ UI는 언제든 바뀔 수 있는 부분이다. 따라서 어떻게 바꿀지 �
 ## 가변 UI 레이아웃을 지키는 제약
 작업자가 놓치기 쉬운 디테일 중 하나는 가변 UI 레이아웃에서의 제약일 것이다. 작업자가 UI를 고정된 형태(width, height의 고정)로만 설계해도 곤란하지만, 그렇다고 가변적인 형태로(margin, padding)만 만들어도 아쉬움이 뒤따른다. 왜냐하면 가변적인 UI는 내용물이 너무 작거나 클 때에는 예상하던 레이아웃을 깨버리기 때문이다. 이럴 때에는 단순하게 `min-width`, `max-height`처럼 몇가지 예외상황에 대한 처리만 해두면 UI 레이아웃을 지킬 수가 있다.
 
+## 파일 내 계층 정렬
+scss 파일 하나에는 여러개의 선택자들을 정의할 수 있다. 문제는 파일 내에 선택자들이 많아지면, 관리하기가 어려울 수 있다는 점이다. 재사용을 고려하여 설계한 선택자들이 단지 정의되어있는지 몰랐다는 이유로 반복 재정의가 된다면 안타까운 일이다. 따라서 선택자들을 정렬하는 방법이 필요하다. 하나의 방법을 제시한다면 '계층 깊이대로 오름차순으로 정렬'하는 것이다.
+
+```css
+.component-group
+.component
+.component-item-group
+.component-item-group-pepper
+.component-item-group-salt
+.component-item-box
+.component-item-box-pepper
+.component-item-box-salt
+.component-item
+.component-item-pepper
+.component-item-salt
+.component-item-link
+.component-image-box
+.component-text-box
+.component-image
+.component-image-pepper
+.component-image-salt
+.component-text
+.component-text-pepper
+.component-text-salt
+```
+
+위처럼 어떤 컴포넌트 이름을 'component'라고 가정하고 다음과 같은 순서대로 정의하였다.
+
+1. 그것을 위한 그룹이 있는가? 그렇다면 이게 가장 위에서 정의
+2. 그 다음이 컴포넌트 자체
+3. 컴포넌트 내부를 차지하는 각 아이템들을 묶는 그룹(group)
+4. 아이템 박스
+5. 아이템
+6. 아이템 내부를 차지하는 이미지, 텍스트 등 직접적인 컨텐츠 영역
+
+이 경우 html은 아래처럼 만들어질 수 있다.
+
+```html
+<div class="component-group">
+  <div class="component">
+    <div class="component-item-group component-item-group-pepper">
+      <div class="component-item component-item-pepper">
+        <div class="component-image-box">
+          <img class="component-image component-image-pepper" src="">
+        </div>
+        <div class="component-text-box">
+          <span class="component-text component-text-pepper">
+            TEXT HERE
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component">
+    <div class="component-item-group component-item-group-salt">
+      <div class="component-item component-item-salt">
+        <div class="component-image-box">
+          <img class="component-image component-image-salt">
+        </div>
+        <div class="component-text-box">
+          <span class="component-text component-text-salt">
+            TEXT HERE
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 ## 숙제
 사소하지만 생각해보아야 할 이슈들 가운데 몇가지만 숙제 형식으로 남겨둔다. 프로젝트의 상황에 따라 해결책은 각기 다를 것이다.
 
 - UI가 UX와 상충될 경우 어떻게 해야할까? 우선순위에 대한 명확한 기준이 각 상황마다 있는가? 리소스, 합리성, 다수결의 원리, 권위자의 의견 등을 어떻게 배합해야 번복을 줄이고 더 견고한 스타일 구조를 만들 수 있을까?
+
+- 컴포넌트가 아닌 요소들, 예를 들어 인라인 스타일들을 대체하는 선택자들은 어느 파일에 위치해야 할까?
 
 - 변수를 정의할 때, 이것이 테마 요소의 일부가 아닌 경우 테마 파일에 정의해야 할까? 만약, 그렇지 않다면 어떻게 해결할 것인가? 따로 파일을 만들 것인가?
 
