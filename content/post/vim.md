@@ -286,7 +286,7 @@ Deoplete을 사용하면서 타이핑하는 과정에서 자동완성 작업을 
 
 자동완성을 위한 popup 메뉴의 동작키는 각각 위/아래를 Page up/down, 그리고 Tab/S-Tab으로 매핑하고 방향키는 그것을 무시하기로 설정했다( 커서 이동 중에 자동완성 메뉴가 나와서 그것에 키가 바인딩되는 것을 방지하기 위하여 ). 이를 위하여 아래처럼 명령어를 두었다.
 
-```
+```vim
 " Popup menu, autocomplete
 "enter as selection, not new line
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
