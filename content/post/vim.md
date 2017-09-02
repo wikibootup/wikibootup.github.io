@@ -27,6 +27,7 @@ Contents
   - [Normal mode 기준](#normal-mode-기준)
   - [Visual mode 기준](#visual-mode-기준)
   - [Command line mode 기준](#command-line-mode-기준)
+- [순수 VI 추종자](#순수-vi-추종자)
 - [Colorscheme](#colorscheme)
 - [File Navigator](#file-navigator)
 - [Search](#search)
@@ -112,6 +113,10 @@ syn sync minlines=50 maxlines=50
 - 현재 커서가 어떤 괄호(`(), {}, []`) 위에 위치해 있고, 그것과 매칭하는 괄호로 커서를 이동하고 싶다면
   - `%`
 
+- 함수의 선언 위치로 이동( 정확하지는 않으나 `#`, `*`보다 유용 )
+  - gd (local definition)
+  - gD (global definition)
+
 ### Visual mode 기준
 
 - 블록을 하는 몇가지 방법
@@ -124,6 +129,9 @@ syn sync minlines=50 maxlines=50
     - 사실 이건 Visual mode 뿐 아니라 다른 곳에도 적용 가능
       - Yank:  `yaw`, `yiw`
       - Cut(delete):  `daw`, `diw`
+
+- 클립보드에 복사하는 방법
+  - 클립보드에 담기는 레지스터에 저장은 영역을 설정하여 `:'<,'>y+`
 
 ### Command line mode 기준
 
@@ -157,6 +165,12 @@ set infercase
 - 메뉴얼에는 대문자로 되어있는 명령어들이라도 만약, 해당 문자에 대해서 소문자 구현이 없다면, 소문자로도 동일한 명령을 할 수 있다. 위의 요약설명에서 원래는 대문자인데 굳이 소문자로 나타낸 명령어들은 그런 이유에서 대문자로 바꾸지 않았다.
 
 이처럼 사소하지만 유용한 명령어들이 많다. 만일 위에서 설명한 검색 및 점프 방법보다 더 자유자재로 움직이고 싶다면 자신만의 방법(?)을 구현하거나 [vim-easymotion](https://github.com/easymotion/vim-easymotion)이나 [vim-sneak](https://github.com/justinmk/vim-sneak)와 같은 플러그인들을 적용해볼 수 있을 것이다.
+
+순수 VI 추종자
+===
+순수 VI 추종자들이 있다. 그들은 화살표 키 대신 `h,j,k,l`을, PageUp/Down 대신 `C-u`, `C-d`을, `Delete` 키 대신 `x`, `X`만을 사용한다. 나의 경우에는 이것도 쓰고 저것도 쓰고 있다. 그때 그때 손이 가까운 곳에 있는 것으로, 편한대로 쓴다.
+
+커스텀 키바인딩은 가급적 VI/VIM에서 기본적으로 바인딩되어있는 키는 피해서 지정하려고 한다. 예를 들어, 주로 Ctrl 키와 관련된 키들은 기본 바인딩 키일 확률이 높아서 피하는 식이다. 대신 많이 이용하는 Prefix 키는 Shift, Leader이다. 이렇게 하는 이유는 VI의 기본키를 사용하려는 이유도 있지만, 공동으로 작업해야 하는 서버 환경이나 페어코딩 시에 혼란을 줄이고 호환성을 유지하려는 이유가 더 크다.
 
 Colorscheme
 ===
@@ -251,7 +265,9 @@ html:5 > div.col-xs-12*5 > div.something
 
 이런 자동 수정 외에 커서를 여러 라인에 만들 수 있게 하는 [Vim multiple cursor](https://github.com/terryma/vim-multiple-cursors)와 같은 플러그인을 이용하면 Sublime text의 전유물인 줄로만 알았던 기능도 구사할 수 있다. 특히 Multiple cursor 모드에서 Visual block이나 `*`, `#` 등의 Vim 고유 기능을 접목하면 매우 유용한 도구가 된다.[^6]
 
-이처럼 유용한 기능을 쉽게 사용 가능한 플러그인들도 있지만, 비교적 설정이 어려운 것들도 있다. 위에서 언급했던 자동완성(Auto Completion)과 문법 검사(Linting) 기능이다. 현재 자동완성은 [Deoplete](https://github.com/Shougo/deoplete.nvim)을 이용하고 있다. 처음 환경설정을 하는 과정에서 이것이 자동완성을 위해 사용해야 하는 기본 Python 설정 경로가 제대로 적용이 안되었던 지라 계속 애를 먹었다. 빠른 작업을 위해서 반드시 이 기능이 필요했기 때문에 삽질을 한 끝에 시스템 파이썬 경로를 지정한 뒤에야 문제가 해결되었다. 아래처럼 길고 하드코딩된 경로가 나라고 좋을리 없겠지만 가능한 시간 범위에서 해결 방법을 찾기 어렵다고 판단하여 보류중이다.
+이처럼 유용한 기능을 쉽게 사용 가능한 플러그인들도 있지만, 비교적 설정이 어려운 것들도 있다. 위에서 언급했던 자동완성(Auto Completion)과 문법 검사(Linting) 기능이다. 현재 자동완성은 [Deoplete](https://github.com/Shougo/deoplete.nvim)과 [nvim-completion-manager](https://github.com/roxma/nvim-completion-manager)을 이용하고 있다.
+
+Deoplete의 경우 처음 환경설정을 하는 과정에서 이것이 자동완성을 위해 사용해야 하는 기본 Python 설정 경로가 제대로 적용이 안되었던 지라 계속 애를 먹었다. 빠른 작업을 위해서 반드시 이 기능이 필요했기 때문에 삽질을 한 끝에 시스템 파이썬 경로를 지정한 뒤에야 문제가 해결되었다. 아래처럼 길고 하드코딩된 경로가 나라고 좋을리 없겠지만 가능한 시간 범위에서 해결 방법을 찾기 어렵다고 판단하여 보류중이다.
 
 ```vim
 let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
@@ -264,6 +280,25 @@ let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin
 "JAVASCRIPT
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+```
+
+Deoplete을 사용하면서 타이핑하는 과정에서 자동완성 작업을 위하여 키보드 입력기능이 멈춘다거나 하지는 않게 되었지만, 이것만으로는 불충분했다. 자동완성이 되는 속도보다 그냥 타이핑하는 속도가 더 빠를 때가 많았기 때문이다. 내가 원하는 것은 10글자의 단어를 입력해야 할 때, 3글자도 채 입력하기 전에 자동완성이 가능한 것이었다. 그래서 nvim-completion-manager을 Deoplete과 함께 사용하게 되었다. nvim-completion-manager은 빠르지만 아직 다양한 언어를 지원하지 않았기 때문에 Deoplete을 함께 사용하기로 했다.
+
+자동완성을 위한 popup 메뉴의 동작키는 각각 위/아래를 Page up/down, 그리고 Tab/S-Tab으로 매핑하고 방향키는 그것을 무시하기로 설정했다( 커서 이동 중에 자동완성 메뉴가 나와서 그것에 키가 바인딩되는 것을 방지하기 위하여 ). 이를 위하여 아래처럼 명령어를 두었다.
+
+```
+" Popup menu, autocomplete
+"enter as selection, not new line
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+" s-Tab as Up
+inoremap <expr> <s-Tab> pumvisible() ? "\<C-p>" : "\<s-Tab>"
+"up -> close popup and up
+inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
+"down -> close popup and down
+inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
+"Page up & down as Up & Down
+inoremap <expr> <PageDown> pumvisible() ? "\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<C-p>" : "\<PageUp>"
 ```
 
 * 위의 코드는 플러그인 매니저 가운데 [Vim-plug](https://github.com/junegunn/vim-plug)를 이용한 형태이다. 이것은 비동기적 플러그 작업(설치, 수정, 삭제 등) 뿐 아니라 위처럼 `npm install`과 같은 후처리 작업을 하는 데에 있어서도 좋다.
@@ -304,27 +339,11 @@ nmap <S-Right> :wincmd l<CR>
 "https://github.com/mileszs/ack.vim#i-dont-want-to-jump-to-the-first-result-automatically
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-map <A-f> :Ack \
-map <C-f> :LAckWindow! -H \
-```
-
-- 텍스트의 잘라내기(Cut) 기능을 추가하기 위하여 일반적인 단축키인 `<C-x>`를 매핑하였다. 단순히 잘라내기 목적으로 추가한 것은 아니고, 협업 시에 `Yank` 방식에 익숙치 않은 경우 이로인해 사소한 지연이 발생하는 것을 해소하고자 했다. 따라서 흔히 쓰는 단축키인 복사 `<C-c>`, 붙여넣기 `<C-v>` 역시 그에 맞게 지정하였다.
-
-```vim
-"http://vim.wikia.com/wiki/Quick_yank_and_paste
-"Ctrl + (c,x,v) as copy(yank)
-vmap <C-c> y<Esc>i
-vmap <C-x> d<Esc>i
-imap <C-v> <Esc>pi
-```
-
-- 빈 공백(trailing)을 제거하기 위하여 CTRAIL, 탭 공간을 공백 문자(space)로 바꾸기 위하여 CTAB을 해당 기능과 매핑(nmap)하였다.
-
-```vim
-"Remove all trailing whitespace
-nmap CTRAIL :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-"Remove all tab space
-nmap CTAB :%s/\t/  /g<CR>
+" search from current directory
+map <S-f> :Ack \
+" search from current file
+" @todo - remap key
+" map <C-f> :LAckWindow! -H \
 ```
 
 - 폴딩을 쉽게 하기 위하여 펴기는 `<Tab>`으로, 접기는 `<S-Tab>`으로 지정하였다. * 펼 때는 커서 위치에 접혀있는(folded) 줄을 재귀적으로 모두 펴고(`zO`), 접을 때는 커서로부터 동일 Indent 미만인 줄을 만나기 이전의 줄까지 모두 접도록 설정하였다 (`zc`).
@@ -336,17 +355,6 @@ nmap fd :setlocal foldlevel=
 "Toggle
 nmap <Tab> zO
 nmap <s-Tab> zc
-```
-
-- 협업 및 작업의 용이함을 위해서 파일을 켜고 끄는 데에 일반적으로 쓰이는 단축키를 매핑하였다. 예를 들면, `<C-q>`를 창 끄기(`:q`), `<C-s>`를 저장(`:w`)에 매핑하였다. `qa`는 `:qa`를 자주 써서 Normal mode에서 쉽게 창들을 닫을 수 있도록 매핑하였다.
-
-```vim
-"Quit file
-nmap <C-q> :q<CR>
-"Quit all file
-nmap qa :qa<CR>
-"Save file like GUI editor
-nmap <C-s> :w<CR>
 ```
 
 위처럼 자주 쓰는 것들에 대하여 키보드 매핑을 하여 편리하게 사용중이다. 하지만 안쓰는 자동 명령어(autocmd)를 굳이 남기지 않듯이, 안쓰는 단축키 역시 굳이 남기지 않고 지우고 있다.
