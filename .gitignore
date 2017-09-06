@@ -3,3 +3,6 @@ public
 node_modules/
 
 app.css
+
+# private texts
+content/post/private/

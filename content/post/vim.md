@@ -284,21 +284,23 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 Deoplete을 사용하면서 타이핑하는 과정에서 자동완성 작업을 위하여 키보드 입력기능이 멈춘다거나 하지는 않게 되었지만, 이것만으로는 불충분했다. 자동완성이 되는 속도보다 그냥 타이핑하는 속도가 더 빠를 때가 많았기 때문이다. 내가 원하는 것은 10글자의 단어를 입력해야 할 때, 3글자도 채 입력하기 전에 자동완성이 가능한 것이었다. 그래서 nvim-completion-manager을 Deoplete과 함께 사용하게 되었다. nvim-completion-manager은 빠르지만 아직 다양한 언어를 지원하지 않았기 때문에 Deoplete을 함께 사용하기로 했다.
 
-자동완성을 위한 popup 메뉴의 동작키는 각각 위/아래를 Page up/down, 그리고 Tab/S-Tab으로 매핑하고 방향키는 그것을 무시하기로 설정했다( 커서 이동 중에 자동완성 메뉴가 나와서 그것에 키가 바인딩되는 것을 방지하기 위하여 ). 이를 위하여 아래처럼 명령어를 두었다.
+자동완성을 위한 popup 메뉴의 동작키는 Enter를 선택으로 두었고, Up/down은 추가적으로 Page up/down, 그리고 Tab/S-Tab으로도 가능하도록 매핑을 추가하였다. 이를 위하여 아래처럼 명령어를 두었다.
 
 ```vim
 " Popup menu, autocomplete
 "enter as selection, not new line
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 " s-Tab as Up
-inoremap <expr> <s-Tab> pumvisible() ? "\<C-p>" : "\<s-Tab>"
+inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
+inoremap <expr> <s-Tab> pumvisible() ? "\<Up>" : "\<s-Tab>"
+inoremap <expr> <PageDown> pumvisible() ? "\<Down>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<Up>" : "\<PageUp>"
+""" Commented because I need to keep default configuration
 "up -> close popup and up
-inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
+"inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
 "down -> close popup and down
-inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
-"Page up & down as Up & Down
-inoremap <expr> <PageDown> pumvisible() ? "\<C-n>" : "\<PageDown>"
-inoremap <expr> <PageUp>   pumvisible() ? "\<C-p>" : "\<PageUp>"
+"inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
+"""
 ```
 
 * 위의 코드는 플러그인 매니저 가운데 [Vim-plug](https://github.com/junegunn/vim-plug)를 이용한 형태이다. 이것은 비동기적 플러그 작업(설치, 수정, 삭제 등) 뿐 아니라 위처럼 `npm install`과 같은 후처리 작업을 하는 데에 있어서도 좋다.
