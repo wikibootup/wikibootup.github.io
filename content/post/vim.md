@@ -323,17 +323,7 @@ let g:neomake_javascript_enabled_makers = ['jshint']
 
 단축키 설정
 ===
-- 사용하는 기능들에 단축키를 설정하면 당연히 편리하다. 예를 들면, Vim 내부에서 창(pane)을 이동할 때 `<C-ww>`나 `<C-w-방향키>`를 매번 입력하는게 은근 고역이었던 지라 `<S-방향키>`로 매핑(nmap)시켰다.
-
-```vim
-"http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
-nmap <S-Up> :wincmd k<CR>
-nmap <S-Down> :wincmd j<CR>
-nmap <S-Left> :wincmd h<CR>
-nmap <S-Right> :wincmd l<CR>
-```
-
-- Ack를 이용하여 검색시에는 현재 버퍼 내에 검색이냐, 아니면 경로내의 모든 파일들에 대한 검색이냐에 따라서 단축키를 분리하였다. 현재 열려있는 버퍼(파일)에서 특정 텍스트를 포함하는 파일을 찾기 위해서는 `<C-f>`, 아니면 현재 디렉토리로부터 모든 파일들에 대해서 검색을 하기 위해서는 `<A-f>`에 매핑하였다.
+- Ack를 이용하여 검색시에는 현재 버퍼 내에 검색이냐, 아니면 경로내의 모든 파일들에 대한 검색이냐에 따라서 단축키를 분리하였다. 현재 디렉토리로부터 모든 파일들에 대해서 검색을 하기 위해서 `<S-f>`에 매핑하였다.
 
 ```vim
 "Ack.vim
