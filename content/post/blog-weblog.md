@@ -1,7 +1,7 @@
 +++
 title = "블로그는 웹로그(weblog)"
 categories = []
-tags = []
+tags = ["essay"]
 draft = false
 date = "2017-03-12T22:58:32+09:00"
 

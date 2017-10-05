@@ -1,7 +1,7 @@
 +++
 draft = false
 categories = []
-tags = ["environment"]
+tags = ["vi", "vim", "neovim", "environment", "development"]
 date = "2017-04-15T18:41:58+09:00"
 title = "Vim과 Vim이 아닌 것"
 
@@ -85,7 +85,7 @@ syn sync minlines=50 maxlines=50
 
 ### Normal mode 기준
 
-- 텍스트를 삭제할 때, `delete` 키 내지 `backspace`만 사용하고 있다면
+- 텍스트를 삭제할 때, `delete` 키 또는 `backspace`만 사용하고 있다면
   - `x`로 현재 커서의 문자를 제거하고, `X`로 이전 커서의 문자를 제거
 - 창(Pane)에서 현재 커서가 위치한 줄은 유지하되 창에 보이는 세로줄만 이동하러면
   - `z.`로 창 중앙, `zt`로 창 맨 위, `zb`로 창 맨 아래로 점프

@@ -3,7 +3,7 @@ date = "2017-07-16T23:20:42+09:00"
 title = "UI 컴포넌트와 테마"
 draft = false
 categories = []
-tags = ['ui', 'css', 'html', 'ui-component']
+tags = ['ui', 'css', 'scss', 'html', 'ui-component']
 
 +++
 

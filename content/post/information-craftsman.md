@@ -3,7 +3,7 @@ date = "2017-06-11T21:20:35+09:00"
 title = "정보공예가의 오늘"
 draft = false
 categories = []
-tags = ["retrospect"]
+tags = ["retrospect", "essay"]
 
 +++
 
