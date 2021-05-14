@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>https://wikibootup.github.io/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language><atom:link href="https://wikibootup.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>성찰12: 회사 3년</title>
+      <link>https://wikibootup.github.io/reflection12/</link>
+      <pubDate>Thu, 13 May 2021 23:56:12 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/reflection12/</guid>
+      <description>회고 서비스 성장 단계  회고 회사에 입사해서 일한 지 3년이 됐다. 그동안 아홉 가지의 깨달음을 얻었다. 사실 별건 없는데 그래도 정리를 해보는 게 나을 것 같아서 아래처럼 적어보았다.
+(1) 서비스는 사람들의 보이지 않는 노력들로 돌아간다는 것을 알게 됐다. 어떤 일이 ‘실질적으로’ 필요할지를 알고 수행할 줄 아는 사람들이 서비스를 지탱해나가는 것 같다. (2) 일을 같이 하고 싶은 동료가 되는 것이 중요함을 알게 됐다. 왜냐하면 일을 처음부터 끝까지 혼자서 다할 수 있는 사람은 없기 때문이다.</description>
+    </item>
+    
+    <item>
+      <title>성찰11: 2020 업무</title>
+      <link>https://wikibootup.github.io/reflection11/</link>
+      <pubDate>Tue, 15 Dec 2020 23:28:16 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/reflection11/</guid>
+      <description>이 글은 2020년 한 해 동안 개인적으로 업무 가운데 기술과 기획 부분에서 인상 깊었던 부분과 협업을 위한 문서들을 정리해보는 글이다.
+ 1. 프로덕트 매니징 작년까지 나는 제품 기획에 대해서 아는 것이 거의 없었다. 그런데 올해 운 좋게 좋은 기획을 경험하면서 여러 가지 발전적인 부분을 배울 수 있었다.
+기획적 관점이 프로덕트에 자리 잡기 전까지 여러 가지 개선할 점들이 있었지만 그중에 네 가지만 추려 보았다.
+1-a. 서비스 관점에서 프로덕트 전체 스펙에 대한 이해도 현재 서비스의 명세들을 제대로 이해하고 있지 못하다 보니 무언가 새로 만드려고 할 때에도, 개선하려고 할 때에도, 고객에게 설명을 하려고 할 때에도 어려움이 있었다.</description>
+    </item>
+    
+    <item>
+      <title>성찰10: 심심하게 삽니다</title>
+      <link>https://wikibootup.github.io/reflection10/</link>
+      <pubDate>Sun, 13 Dec 2020 16:43:18 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/reflection10/</guid>
+      <description>운동 1년 차의 운동 이야기
+움직이는 활동이라고는 그저 업무를 위해 신나게 움직이는 손가락이 전부가 된 나에게, 매일 달리고 달렸던 군 복무 시절의 경험은 너무나도 이질적인 과거가 된 지 오래였다.
+그런데 작년 겨울, 나는 급격히 체질이 바뀌어서 도무지 춥지가 않았다. 반팔에 후드 하나 걸치고 다니는데 열이 났다.
+변해버린 체질 때문이었을까? 문득 운동을 해야겠다는 생각이 들었다. 그중에서도 내가 가장 쉽게 할 수 있는 운동을 찾고 싶었다. 마음 가는 곳에 눈이 간다고, 매일매일 점심을 먹으러 사무실 밖을 나가며 보는 바깥 풍경에 다른 것이 보였다.</description>
+    </item>
+    
+    <item>
+      <title>코딩5: 웹 서비스 퍼포먼스 테스트</title>
+      <link>https://wikibootup.github.io/coding5/</link>
+      <pubDate>Sat, 16 May 2020 22:15:58 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/coding5/</guid>
+      <description>배경 웹 서비스의 수행 능력을 파악하기 위한 검증 작업을 ‘웹 서비스 퍼포먼스 테스트(web service performance test)’라고 한다. 퍼포먼스 테스트는 세부 목적에 따라 로드 테스트(load), 스트레스 테스트(stress), 쏘크 테스트(soak), 스파이크 테스트(spike), 설정 테스트(configuration) 등으로 나뉜다. 만약, 웹 서비스의 각 기능들이 종합적으로 정상 동작할 허용 가능한 부하 조건을 파악하는 것이 목적이라면 로드 테스트이고, 특정 부하를 아주 짧은 시간 동안 급증시켜서 서비스를 검증한다면 스파이크 테스트이다. 그리고, 일정한 부하를 계속 유지하며 서비스를 검증한다면 쏘크테스트, 하드웨어 스펙(spec)에 변화를 주며 서비스를 검증한다면 설정 테스트이다.</description>
+    </item>
+    
+    <item>
+      <title>기타1: &#39;당신과 당신의 연구&#39; 요약</title>
+      <link>https://wikibootup.github.io/etc1/</link>
+      <pubDate>Sun, 22 Mar 2020 01:17:58 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/etc1/</guid>
+      <description>1986년 봄, 수학자 리처드 해밍은 ‘당신과 당신의 연구’라는 제목의 세미나를 통해 위대한 연구를 하는 방법에 대해서 설명했다. 나는 이전에 해당 세미나를 정리한 글을 보고 감명을 받았다. 리처드 해밍은 이 방법을 ‘과학’으로 한정해서 설명한다고 했지만, 개인적으로 중요한 문제를 찾아 해결하고자 하는 사람이라면 참고할만한 좋은 내용이라는 생각이 들었다.
+ 리처드 해밍은 위대한 일을 할 수 있을지의 여부는 완전히는 아닐지라도 일정 부분은 선택할 수 있는 부분이라고 주장하며 그 방법을 설명했다.
+세미나 내용을 기수를 붙여 요약하면 다음과 같다.</description>
+    </item>
+    
+    <item>
+      <title>성찰1: 온전히 살기</title>
+      <link>https://wikibootup.github.io/reflection1/</link>
+      <pubDate>Sat, 29 Feb 2020 00:08:48 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/reflection1/</guid>
+      <description>작년 말, 16년 전 시작한 ‘진지한 고민’들의 종지부를 찍었다. 해결했기 때문이 아니라 결정을 했기 때문이다. 고로 지금 나는 단순하고 명확하다.
+‘눈을 뜬 순간’처럼 그 결정에 다가가 보기로 한다.
+ 살아있다는 것, 살아있다는 것은 거스를 수 없는 강력한 흐름이다. 살아있는 존재에게는 에너지라는 것이 주어지며, 존재가 모든 에너지를 잃거나 전부 사용하면 존재는 생을 다하게 된다.
+에너지의 생산과 소비는 시간을 통해 이루어진다. 그리고 존재에게 주어진 시간과 에너지는 시작과 끝이 있다. 즉, 유한하다.
+탄생한 존재는 시대에 종속된다.</description>
+    </item>
+    
+    <item>
+      <title>건강1: 경각심</title>
+      <link>https://wikibootup.github.io/health1/</link>
+      <pubDate>Sun, 03 Mar 2019 13:00:35 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/health1/</guid>
+      <description>자기 기만이 없다면 희망은 존재할 수 없지만, 용기는 이성적이고 사물을 있는 그대로를 본다. 희망은 소멸할 수 있지만 용기는 호흡이 길다. 희망이 분출할 때는 어려운 일을 시작하는 것이 쉽지만 그것을 마무리하는 데에는 용기가 필요하다. - &amp;lsquo;인간에게는 희망보다 용기가 필요하다&amp;rsquo; 중에서.1
+ 신체능력, 신체건강  “건강을 관리해야 한다. 그리고 운동을 해야한다.&amp;quot;.
+ 세상에는 어떠한 건강관리를 하지 않아도 건강하게 사는 사람들이 있다. 그리고 반대로 온갖 건강관리와 운동을 하는 사람 가운데서도 일찍 병에 걸리는 사람들 역시 있다.</description>
+    </item>
+    
+    <item>
+      <title>코딩3: 데이터 표현</title>
+      <link>https://wikibootup.github.io/coding3/</link>
+      <pubDate>Sun, 10 Dec 2017 18:15:36 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/coding3/</guid>
+      <description>불현듯 저 손, 동영상에 나온 손, 뼈마디가 굵어진 손으로 재이가 황급히 가린 게 비명이 아니라 웃음이었을지도 모른다는 생각에. 정말 그렇다면 그동안 내가 재이에게 준 것은 무엇이었을까. 이윽고 눈뜬 아이가 맑은 눈망울로 나를 바라본다.1
+ Prologue 초기 데이터(Raw data)가 어떤 이름과 값들로 이루어져 있든 간에 데이터를 적절하게 가공했다면, 표현을 위한 데이터는 그 형태가 같거나 비슷할 것이다. 다르게 말하자면, 표현하는 종류가 다르더라도 가공한 데이터의 형태는 축의 이름(Label)과 단위(Unit)가 다를 수는 있어도 각 축의 값(정의역)과 그 축에 대응하는 값(치역)으로 이루어지는 형태라는 점은 같다.</description>
+    </item>
+    
+    <item>
+      <title>코딩2: ETC</title>
+      <link>https://wikibootup.github.io/coding2/</link>
+      <pubDate>Thu, 05 Oct 2017 15:40:09 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/coding2/</guid>
+      <description>큰스님은 황급히 코로 손을 가져갔다. 손에 닿은 것은 어젯밤의 짧은 코가 아니었다. 윗입술의 위쪽부터 턱밑까지 대여섯 치나 늘어져 있던, 옛날의 기다란 코였다. 큰스님은 코가 하룻밤 새 다시 원래대로 길어졌다는 것을 알았다. 그리고 그와 동시에 코가 짧아졌을 때와 마찬가지로, 홀가분한 기분이 어디선지 모르게 되돌아온 것을 느꼈다.1
+ 두 연산의 비교 아래 두 연산이 있다. 컴퓨터는 둘 중 어느것을 더 빠르게 처리할까?
+ ( 9,223,372,036,854,775,807 &amp;gt; 9,223,372,036,854,775,806 ) ( 2 &amp;gt; 1 )  나의 예상으로는 사람들은 &amp;lsquo;당연히 2번&amp;rsquo;이라고 생각하거나 &amp;lsquo;당연히 똑같을 것&amp;rsquo;이라는 답변 가운데 하나를 낼 것 같다.</description>
+    </item>
+    
+    <item>
+      <title>UI코딩2: 컴포넌트와 테마</title>
+      <link>https://wikibootup.github.io/ui-coding2/</link>
+      <pubDate>Sun, 16 Jul 2017 23:20:42 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/ui-coding2/</guid>
+      <description>기계적 창의성은 디자인 능력의 한 종류지만, 또한 개인의 소질이기도 하다. 헌신을 부추기는 도덕적 임무에 대한 동의 여부와는 별개로, 모든 사람이 다 그런 식으로 일할 수 있거나 그런 작업에 이끌리는 것은 아니다. 디자이너는, 자신이 디자인의 매우 넓은 범위 중 정확히 어디에서 제일 효과적으로 기여할 수 있을지 스스로 알아내야 한다.1
+ 개요 테마란 일상적인 의미에서는 대화(또는 작품의)의 주제나 화제를 뜻하고, 주식에서는 주가의 등락을 결정하는 요인이라고 부른다고 한다. 그렇지만 여기서는 이것을 &amp;lsquo;브랜드를 표현하는 일관된 UI 스타일&amp;lsquo;로 정의한다.</description>
+    </item>
+    
+    <item>
+      <title>코딩1: VIM</title>
+      <link>https://wikibootup.github.io/coding1/</link>
+      <pubDate>Sat, 15 Apr 2017 18:41:58 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/coding1/</guid>
+      <description>&amp;ldquo;지도는 아무짝에도 소용없는 거야. 허술한 지도는 허술하니까 소용없고 가장 정교한 지도는 가장 정교해지는 순간 도시가 바뀌어버리니까 소용없는 거야. 그래서 나는 지도 따위는 보지 않아. (&amp;hellip;)&amp;quot;1
+ 배경 좋은 에디터가 많다. 회사 소유의(proprietary) 제품들은 언어별 문법을 자동으로 지원하고2, 수많은 기본 기능을 제공한다. 여기에 연동되는 플러그인까지 있어 장점이 많다. 예를 들어 Sublime text, Jetbrains 사의 제품들, Visual studio 등 이미 유명한 제품들이 이러한 기능들을 제공한다. 이러한 에디터들을 체험해보면 혹자들이 Vim이나 Emacs는 CUI 환경의 유물(?</description>
+    </item>
+    
+    <item>
+      <title>UI코딩1: CSS 협업</title>
+      <link>https://wikibootup.github.io/ui-coding1/</link>
+      <pubDate>Sun, 12 Mar 2017 23:23:26 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/ui-coding1/</guid>
+      <description>지식의 서열은 그것이 공동의 과제에 공헌하는 바에 따라 평가되는 것이지, 지식 그 자체로서 우월하다거나 열등하다는 평가를 내릴 수는 없다.1
+ 배경 현재 작업하고 있는 웹 뷰(web view)는 크게 세가지 이슈가 있다.
+ 일관적이지 않은 코드 구조   뷰 작성 규칙이 통일되지 않았다 동일 요소에 대한 중복 설정이 많아진다  높은 결합도   표현(css), 행위(js), 텍스트(html) 간에 명확한 분리가 이루어지지 않았다 뷰의 일부 요소가 전체 요소 및 행위(js)에 영향을 미치고 있다 스타일 적용 깊이 및 선택자 덮어쓰기도 html 구조를 바꾸기 어렵게 한다  결과적으로 이러한 이슈들은 공동 작업을 어렵게 한다.</description>
+    </item>
+    
+    <item>
+      <title>blog init</title>
+      <link>https://wikibootup.github.io/blog-init/</link>
+      <pubDate>Sun, 12 Mar 2017 22:58:32 +0900</pubDate>
+      
+      <guid>https://wikibootup.github.io/blog-init/</guid>
+      <description>에브게니아가 그 뒤에 만난 여러 편집자들은 한결같이 왜 진작 자기를 찾아오지 않았느냐며 그녀를 탓했다.1
+ 나는 3년 전에 처음 블로그를 시작했다. 거기에는 어떤 특별한 이유가 있는 것은 아니었다. 단지 주변에서 하고, 그들이 나한테도 권하길래. 그래서 시작은 했는데, 손에서 나오는 글들을 보고 있으니 역시 드는 생각은, 나는 일반적인 글을 쓰는 재주가 없다, 그저 &amp;lsquo;필요&amp;rsquo;하기 때문에 그런 글들을 쓰면서 살아오고 있는 것일 뿐이었다. 이게 무슨 의미냐면, 외면적으로는 독자가 기대하는 요구사항에 맞게 작성하라는 의미, 내면적으로는 &amp;lsquo;사회인답게&amp;rsquo;라는 이념이 포함된 의미이다.</description>
+    </item>
+    
+  </channel>
+</rss>

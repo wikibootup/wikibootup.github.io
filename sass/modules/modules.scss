@@ -1,0 +1,20 @@
+// Font
+.font-small {
+  font-size: 14px;
+}
+
+@media (min-width: 38em) {
+  .font-normal {
+    font-size: 18px;
+  }
+}
+
+// Posts
+.posts-ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.posts-li {
+  margin: .5rem 0;
+}
