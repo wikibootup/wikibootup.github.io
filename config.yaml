@@ -1,0 +1,13 @@
+---
+baseURL: "https://wikibootup.github.io"
+theme: "lanyon-hugo"
+footnotereturnlinkcontents: "↩"
+languageCode: "ko"
+canonifyURLs: true
+
+params:
+  Author: "wikibootup"
+  DateForm: "Jan 2, 2006"
+  Title: "wikibootup"
+  PygmentsStyle: "pastie"
+  PygmentsCodeFences: true

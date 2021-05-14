@@ -1,0 +1,23 @@
+{
+  "name": "wikibootup.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wikibootup/wikibootup.github.io.git"
+  },
+  "author": "wikibootup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wikibootup/wikibootup.github.io/issues"
+  },
+  "homepage": "https://github.com/wikibootup/wikibootup.github.io#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.0",
+    "sass-lint": "^1.10.2"
+  }
+}

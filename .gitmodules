@@ -1,0 +1,7 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/wikibootup/wikibootup.github.io.git
+	branch = master
+[submodule "themes/lanyon-hugo"]
+	path = themes/lanyon-hugo
+	url = https://github.com/tummychow/lanyon-hugo
